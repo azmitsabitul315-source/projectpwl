@@ -6,9 +6,10 @@ class Login extends BaseController
 {
     public function index()
     {
+        // Panggil helper form agar form_open() bekerja
         helper('form');
 
-       
+        // Jika sudah login, jangan kasih akses ke halaman login lagi
         if (session()->get('logged_in')) {
             return redirect()->to('/produk');
         }
@@ -22,11 +23,11 @@ class Login extends BaseController
 
     public function auth()
     {   
-        
+        // Data testing (Hardcoded)
         $d_email = "user@example.com";
         $d_password = "Test-123";
 
-       
+        // Ambil input dari form
         $email = $this->request->getPost('email');
         $password = $this->request->getPost('paswd');
         
@@ -36,17 +37,19 @@ class Login extends BaseController
                 'userid'    => 1,
                 'email'     => $email,
                 'nama'      => 'Fulan',
-                'logged_in' => true 
+                'logged_in' => true // HARUS 'logged_in' agar sesuai dengan Filter Auth.php
             ];
 
             session()->set($datauser);
+            session()->set('member','premium');
             
-         
+            return redirect()->to('/');
+            // Redirect ke halaman produk setelah sukses
             return redirect()->to('/produk');
         }
         else
         {
-            
+            // Kirim pesan error jika gagal
             session()->setFlashdata('msg', 'User tidak ditemukan atau Password salah');
             return redirect()->to('/login');
         }
