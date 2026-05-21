@@ -1,0 +1,398 @@
+DEBUG - 2026-05-21 14:57:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-05-21 14:59:57 --> CSRF token verified.
+DEBUG - 2026-05-21 14:59:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 14:59:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:00:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:00:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-05-21 15:09:20 --> CSRF token verified.
+DEBUG - 2026-05-21 15:09:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:09:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:12:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:12:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:12:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:12:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:13:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:13:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-05-21 15:13:35 --> CodeIgniter\Security\Exceptions\SecurityException: The action you requested is not allowed.
+[Method: POST, Route: kuliner/store]
+in SYSTEMPATH\Security\Security.php on line 258.
+ 1 SYSTEMPATH\Security\Security.php(258): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(52): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(241): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 5 SYSTEMPATH\CodeIgniter.php(465): CodeIgniter\Filters\Filters->run('kuliner/store', 'before')
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+DEBUG - 2026-05-21 15:13:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-05-21 15:15:16 --> CodeIgniter\Security\Exceptions\SecurityException: The action you requested is not allowed.
+[Method: POST, Route: kuliner/store]
+in SYSTEMPATH\Security\Security.php on line 258.
+ 1 SYSTEMPATH\Security\Security.php(258): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(52): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(241): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 5 SYSTEMPATH\CodeIgniter.php(465): CodeIgniter\Filters\Filters->run('kuliner/store', 'before')
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+CRITICAL - 2026-05-21 15:18:53 --> CodeIgniter\Security\Exceptions\SecurityException: The action you requested is not allowed.
+[Method: POST, Route: kuliner/store]
+in SYSTEMPATH\Security\Security.php on line 258.
+ 1 SYSTEMPATH\Security\Security.php(258): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(52): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(241): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 5 SYSTEMPATH\CodeIgniter.php(465): CodeIgniter\Filters\Filters->run('kuliner/store', 'before')
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+DEBUG - 2026-05-21 15:19:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-05-21 15:19:16 --> CodeIgniter\Security\Exceptions\SecurityException: The action you requested is not allowed.
+[Method: POST, Route: kuliner/store]
+in SYSTEMPATH\Security\Security.php on line 258.
+ 1 SYSTEMPATH\Security\Security.php(258): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(52): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(241): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 5 SYSTEMPATH\CodeIgniter.php(465): CodeIgniter\Filters\Filters->run('kuliner/store', 'before')
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+DEBUG - 2026-05-21 15:19:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-05-21 15:21:59 --> CodeIgniter\Security\Exceptions\SecurityException: The action you requested is not allowed.
+[Method: POST, Route: kuliner/store]
+in SYSTEMPATH\Security\Security.php on line 258.
+ 1 SYSTEMPATH\Security\Security.php(258): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(52): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(241): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 5 SYSTEMPATH\CodeIgniter.php(465): CodeIgniter\Filters\Filters->run('kuliner/store', 'before')
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+CRITICAL - 2026-05-21 15:22:03 --> CodeIgniter\Security\Exceptions\SecurityException: The action you requested is not allowed.
+[Method: POST, Route: kuliner/store]
+in SYSTEMPATH\Security\Security.php on line 258.
+ 1 SYSTEMPATH\Security\Security.php(258): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(52): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(241): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 5 SYSTEMPATH\CodeIgniter.php(465): CodeIgniter\Filters\Filters->run('kuliner/store', 'before')
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+CRITICAL - 2026-05-21 15:22:05 --> CodeIgniter\Security\Exceptions\SecurityException: The action you requested is not allowed.
+[Method: POST, Route: kuliner/store]
+in SYSTEMPATH\Security\Security.php on line 258.
+ 1 SYSTEMPATH\Security\Security.php(258): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(52): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(241): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 5 SYSTEMPATH\CodeIgniter.php(465): CodeIgniter\Filters\Filters->run('kuliner/store', 'before')
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+CRITICAL - 2026-05-21 15:22:10 --> CodeIgniter\Security\Exceptions\SecurityException: The action you requested is not allowed.
+[Method: POST, Route: kuliner/store]
+in SYSTEMPATH\Security\Security.php on line 258.
+ 1 SYSTEMPATH\Security\Security.php(258): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(52): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(241): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 5 SYSTEMPATH\CodeIgniter.php(465): CodeIgniter\Filters\Filters->run('kuliner/store', 'before')
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+CRITICAL - 2026-05-21 15:23:36 --> CodeIgniter\Security\Exceptions\SecurityException: The action you requested is not allowed.
+[Method: POST, Route: kuliner/store]
+in SYSTEMPATH\Security\Security.php on line 258.
+ 1 SYSTEMPATH\Security\Security.php(258): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(52): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(241): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 5 SYSTEMPATH\CodeIgniter.php(465): CodeIgniter\Filters\Filters->run('kuliner/store', 'before')
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+DEBUG - 2026-05-21 15:24:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:24:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:24:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:24:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:24:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:24:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:24:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:25:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-05-21 15:25:08 --> CSRF token verified.
+DEBUG - 2026-05-21 15:25:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:25:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:25:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:25:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-05-21 15:25:34 --> CSRF token verified.
+DEBUG - 2026-05-21 15:25:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-05-21 15:25:34 --> Unknown column 'gambar' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `kuliner` (`user_id`, `nama`, `alamat`, `deskripsi`, `gambar`, `status`, `created_at`, `updated_at`) VALUES (1, \'Tahu\', \'Semarang\', \'assasadad\', \'1779377134_7deb78540b7d291c2cef.png\', \'pending\', \'2026-05-21 15:25:34\', \'2026-05-21 15:25:34\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `kuliner` (`user_id`, `nama`, `alamat`, `deskripsi`, `gambar`, `status`, `created_at`, `updated_at`) VALUES (1, \'Tahu\', \'Semarang\', \'assasadad\', \'1779377134_7deb78540b7d291c2cef.png\', \'pending\', \'2026-05-21 15:25:34\', \'2026-05-21 15:25:34\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `kuliner` (`user_id`, `nama`, `alamat`, `deskripsi`, `gambar`, `status`, `created_at`, `updated_at`) VALUES (1, \'Tahu\', \'Semarang\', \'assasadad\', \'1779377134_7deb78540b7d291c2cef.png\', \'pending\', \'2026-05-21 15:25:34\', \'2026-05-21 15:25:34\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `kuliner` (`user_id`, `nama`, `alamat`, `deskripsi`, `gambar`, `status`, `created_at`, `updated_at`) VALUES (:user_id:, :nama:, :alamat:, :deskripsi:, :gambar:, :status:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(752): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\Kuliner.php(57): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->store()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+CRITICAL - 2026-05-21 15:25:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'gambar' in 'field list'
+[Method: POST, Route: kuliner/store]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `kuliner` (`user_id`, `nama`, `alamat`, `deskripsi`, `gambar`, `status`, `created_at`, `updated_at`) VALUES (:user_id:, :nama:, :alamat:, :deskripsi:, :gambar:, :status:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(752): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\Kuliner.php(57): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->store()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+CRITICAL - 2026-05-21 15:25:34 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'gambar' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `kuliner` (`user_id`, `nama`, `alamat`, `deskripsi`, `gambar`, `status`, `created_at`, `updated_at`) VALUES (1, \'Tahu\', \'Semarang\', \'assasadad\', \'1779377134_7deb78540b7d291c2cef.png\', \'pending\', \'2026-05-21 15:25:34\', \'2026-05-21 15:25:34\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `kuliner` (`user_id`, `nama`, `alamat`, `deskripsi`, `gambar`, `status`, `created_at`, `updated_at`) VALUES (1, \'Tahu\', \'Semarang\', \'assasadad\', \'1779377134_7deb78540b7d291c2cef.png\', \'pending\', \'2026-05-21 15:25:34\', \'2026-05-21 15:25:34\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `kuliner` (`user_id`, `nama`, `alamat`, `deskripsi`, `gambar`, `status`, `created_at`, `updated_at`) VALUES (:user_id:, :nama:, :alamat:, :deskripsi:, :gambar:, :status:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], false)
+ 7 SYSTEMPATH\BaseModel.php(752): CodeIgniter\Model->insert([...], false)
+ 8 APPPATH\Controllers\Kuliner.php(57): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->store()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+CRITICAL - 2026-05-21 15:25:34 --> [Caused by] mysqli_sql_exception: Unknown column 'gambar' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `kuliner` (`user_id`, `nama`, `alamat`, `deskripsi`, `gambar`, `status`, `created_at`, `updated_at`) VALUES (1, \'Tahu\', \'Semarang\', \'assasadad\', \'1779377134_7deb78540b7d291c2cef.png\', \'pending\', \'2026-05-21 15:25:34\', \'2026-05-21 15:25:34\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `kuliner` (`user_id`, `nama`, `alamat`, `deskripsi`, `gambar`, `status`, `created_at`, `updated_at`) VALUES (1, \'Tahu\', \'Semarang\', \'assasadad\', \'1779377134_7deb78540b7d291c2cef.png\', \'pending\', \'2026-05-21 15:25:34\', \'2026-05-21 15:25:34\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `kuliner` (`user_id`, `nama`, `alamat`, `deskripsi`, `gambar`, `status`, `created_at`, `updated_at`) VALUES (1, \'Tahu\', \'Semarang\', \'assasadad\', \'1779377134_7deb78540b7d291c2cef.png\', \'pending\', \'2026-05-21 15:25:34\', \'2026-05-21 15:25:34\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `kuliner` (`user_id`, `nama`, `alamat`, `deskripsi`, `gambar`, `status`, `created_at`, `updated_at`) VALUES (:user_id:, :nama:, :alamat:, :deskripsi:, :gambar:, :status:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(752): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\Kuliner.php(57): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->store()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+DEBUG - 2026-05-21 15:30:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:30:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-05-21 15:30:38 --> CSRF token verified.
+DEBUG - 2026-05-21 15:30:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:30:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:30:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-05-21 15:30:55 --> CSRF token verified.
+DEBUG - 2026-05-21 15:30:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:30:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-05-21 15:47:50 --> ParseError: Unmatched '}'
+[Method: GET, Route: kuliner/edit/1]
+in APPPATH\Controllers\Kuliner.php on line 140.
+ 1 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\projectpwl22\\vendor\\composer/../../app\\Controllers\\Kuliner.php')
+ 2 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\Kuliner')
+ 3 SYSTEMPATH\Router\Router.php(792): class_exists('\\App\\Controllers\\Kuliner')
+ 4 SYSTEMPATH\Router\Router.php(230): CodeIgniter\Router\Router->processRouteAttributes()
+ 5 SYSTEMPATH\CodeIgniter.php(829): CodeIgniter\Router\Router->handle('kuliner/edit/1')
+ 6 SYSTEMPATH\CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+CRITICAL - 2026-05-21 15:47:51 --> ParseError: Unmatched '}'
+[Method: GET, Route: kuliner]
+in APPPATH\Controllers\Kuliner.php on line 140.
+ 1 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\projectpwl22\\vendor\\composer/../../app\\Controllers\\Kuliner.php')
+ 2 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\Kuliner')
+ 3 SYSTEMPATH\Router\Router.php(792): class_exists('\\App\\Controllers\\Kuliner')
+ 4 SYSTEMPATH\Router\Router.php(230): CodeIgniter\Router\Router->processRouteAttributes()
+ 5 SYSTEMPATH\CodeIgniter.php(829): CodeIgniter\Router\Router->handle('kuliner')
+ 6 SYSTEMPATH\CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+CRITICAL - 2026-05-21 15:47:52 --> ParseError: Unmatched '}'
+[Method: GET, Route: kuliner/create]
+in APPPATH\Controllers\Kuliner.php on line 140.
+ 1 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\projectpwl22\\vendor\\composer/../../app\\Controllers\\Kuliner.php')
+ 2 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\Kuliner')
+ 3 SYSTEMPATH\Router\Router.php(792): class_exists('\\App\\Controllers\\Kuliner')
+ 4 SYSTEMPATH\Router\Router.php(230): CodeIgniter\Router\Router->processRouteAttributes()
+ 5 SYSTEMPATH\CodeIgniter.php(829): CodeIgniter\Router\Router->handle('kuliner/create')
+ 6 SYSTEMPATH\CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+DEBUG - 2026-05-21 15:47:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:47:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:47:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-05-21 15:48:06 --> CSRF token verified.
+DEBUG - 2026-05-21 15:48:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:48:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:49:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-05-21 15:49:26 --> ParseError: Unmatched '}'
+[Method: GET, Route: kuliner]
+in APPPATH\Controllers\Kuliner.php on line 140.
+ 1 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\projectpwl22\\vendor\\composer/../../app\\Controllers\\Kuliner.php')
+ 2 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\Kuliner')
+ 3 SYSTEMPATH\Router\Router.php(792): class_exists('\\App\\Controllers\\Kuliner')
+ 4 SYSTEMPATH\Router\Router.php(230): CodeIgniter\Router\Router->processRouteAttributes()
+ 5 SYSTEMPATH\CodeIgniter.php(829): CodeIgniter\Router\Router->handle('kuliner')
+ 6 SYSTEMPATH\CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+DEBUG - 2026-05-21 15:49:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-05-21 15:49:37 --> ParseError: Unmatched '}'
+[Method: GET, Route: kuliner]
+in APPPATH\Controllers\Kuliner.php on line 140.
+ 1 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\projectpwl22\\vendor\\composer/../../app\\Controllers\\Kuliner.php')
+ 2 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\Kuliner')
+ 3 SYSTEMPATH\Router\Router.php(792): class_exists('\\App\\Controllers\\Kuliner')
+ 4 SYSTEMPATH\Router\Router.php(230): CodeIgniter\Router\Router->processRouteAttributes()
+ 5 SYSTEMPATH\CodeIgniter.php(829): CodeIgniter\Router\Router->handle('kuliner')
+ 6 SYSTEMPATH\CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+CRITICAL - 2026-05-21 15:49:43 --> ParseError: Unmatched '}'
+[Method: GET, Route: kuliner]
+in APPPATH\Controllers\Kuliner.php on line 140.
+ 1 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\projectpwl22\\vendor\\composer/../../app\\Controllers\\Kuliner.php')
+ 2 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\Kuliner')
+ 3 SYSTEMPATH\Router\Router.php(792): class_exists('\\App\\Controllers\\Kuliner')
+ 4 SYSTEMPATH\Router\Router.php(230): CodeIgniter\Router\Router->processRouteAttributes()
+ 5 SYSTEMPATH\CodeIgniter.php(829): CodeIgniter\Router\Router->handle('kuliner')
+ 6 SYSTEMPATH\CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+DEBUG - 2026-05-21 15:50:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:50:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:50:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:50:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-05-21 15:50:45 --> CSRF token verified.
+DEBUG - 2026-05-21 15:50:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:50:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:50:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:50:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:53:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:53:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:55:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:55:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:55:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:57:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:57:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:57:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:57:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:59:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 15:59:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:04:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:04:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:06:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:06:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:06:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-05-21 16:07:06 --> CSRF token verified.
+DEBUG - 2026-05-21 16:07:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:07:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:07:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:10:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:11:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:11:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:12:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:12:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:15:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-05-21 16:15:34 --> CSRF token verified.
+DEBUG - 2026-05-21 16:15:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:15:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-05-21 16:15:45 --> CSRF token verified.
+DEBUG - 2026-05-21 16:15:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:15:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-05-21 16:16:03 --> CSRF token verified.
+DEBUG - 2026-05-21 16:16:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:16:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:16:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:16:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:16:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:16:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:16:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-05-21 16:16:47 --> CSRF token verified.
+DEBUG - 2026-05-21 16:16:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:16:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:16:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:16:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-05-21 16:17:09 --> CSRF token verified.
+DEBUG - 2026-05-21 16:17:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:17:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:17:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:17:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-05-21 16:19:16 --> CSRF token verified.
+DEBUG - 2026-05-21 16:19:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:19:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:19:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:19:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-05-21 16:19:36 --> CSRF token verified.
+DEBUG - 2026-05-21 16:19:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:19:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-05-21 16:19:53 --> CSRF token verified.
+DEBUG - 2026-05-21 16:19:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:19:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:20:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:21:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:21:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:21:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:22:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:23:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:23:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-21 16:23:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
