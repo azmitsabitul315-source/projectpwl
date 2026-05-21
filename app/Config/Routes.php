@@ -21,7 +21,7 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     $routes->get('dashboard', 'Dashboard::index');
     $routes->get('admin/dashboard', 'Dashboard::admin');
     
-    // Rute baca data kuliner untuk semua user yang sudah login
+  
     $routes->get('kuliner', 'Kuliner::index');
 });
 
