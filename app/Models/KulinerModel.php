@@ -14,7 +14,7 @@ class KulinerModel extends Model
     protected $protectFields    = true;
     protected $allowedFields    = [
         'user_id', 'id_kategori', 'nama', 'alamat',
-        'deskripsi', 'gambar', 'lat', 'lng', 'status'
+        'deskripsi', 'gambar', 'foto2', 'foto3', 'lat', 'lng', 'status'
     ];
 
     protected bool $allowEmptyInserts = false;

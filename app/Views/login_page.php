@@ -1,45 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $title ?></title>
-    <link rel="stylesheet" href="<?= base_url('login_style.css') ?>">
-
+    <meta name="description" content="Masuk ke Kuliner — temukan kuliner terbaik di sekitar UDINUS Semarang">
+    <title><?= $title ?> — Kuliner</title>
+    <link rel="stylesheet" href="<?= base_url('kuliner.css') ?>">
 </head>
-<body>
+<body style="background: var(--kl-bg);">
 
-    <div class="left-panel">
-        <h2>Selamat Datang</h2>
-        <p>Silakan gunakan Email Anda untuk masuk ke sistem. Pastikan data yang dimasukkan sudah benar.</p>
-    </div>
-
-    <div class="right-panel">
-        <div class="login-card">
-            <h1>Login</h1>
-            <p class="subtitle">Masuk untuk melanjutkan ke dashboard.</p>
-
-            <?php if(session()->getFlashdata('msg')): ?>
-                <div class="error-msg">
-                    <?= session()->getFlashdata('msg') ?>
+    <div class="kl-auth-layout">
+        <!-- Left Panel — Decorative -->
+        <div class="kl-auth-left">
+            <div class="kl-auth-left-emojis">
+                <span>🍜</span>
+                <span>☕</span>
+                <span>🥣</span>
+                <span>🧋</span>
+                <span>🍳</span>
+            </div>
+            <div style="position: relative; z-index: 1;">
+                <div class="kl-logo" style="margin-bottom: 32px; font-size: 2rem;">
+                    <span> </span>Kuliner
                 </div>
-            <?php endif; ?>
+                <h1 style="font-size: 36px; font-weight: 700; color: var(--kl-dark); margin-bottom: 16px; font-family: var(--kl-font-display);">
+                    Kuliner sekitar UDINUS,<br>semuanya di sini.
+                </h1>
+                <p style="font-size: 16px; color: var(--kl-muted); max-width: 400px; line-height: 1.7;">
+                    Temukan warung makan, coffee shop, dan burjo favorit di sekitar kampus. Masuk untuk mulai berkontribusi.
+                </p>
+            </div>
+        </div>
 
-            <?= form_open(site_url('login-auth')) ?>
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" name="email" placeholder="user@example.com" required>
+        <!-- Right Panel — Login Form -->
+        <div class="kl-auth-right">
+            <div class="kl-auth-card">
+                <div class="kl-text-center" style="margin-bottom: 32px;">
+                    <div class="kl-logo" style="justify-content: center; margin-bottom: 20px; font-size: 1.6rem;">
+                         <span></span>Kuliner
+                    </div>
+                    <h2 style="font-family: var(--kl-font-display); font-size: 24px; font-weight: 700; margin-bottom: 8px;">
+                        Selamat datang kembali
+                    </h2>
+                    <p style="color: var(--kl-muted); font-size: 14px;">
+                        Masuk untuk mulai berkontribusi
+                    </p>
                 </div>
-                
-                <div class="form-group">
-                    <label>Password</label>
-                    <input type="password" name="paswd" placeholder="Masukkan Password" required>
-                </div>
-                
-                <button type="submit">Log In</button>
-            <?= form_close() ?>
+
+                <?php if (session()->getFlashdata('msg')): ?>
+                    <div class="kl-alert kl-alert-danger">
+                        <span>⚠️</span>
+                        <div style="flex: 1;"><?= session()->getFlashdata('msg') ?></div>
+                    </div>
+                <?php endif; ?>
+
+                <?= form_open(site_url('login-auth')) ?>
+                    <div class="kl-form-group">
+                        <label class="kl-form-label">Email</label>
+                        <input type="email" name="email" class="kl-input" placeholder="nama@email.com" required minlength="6" value="<?= old('email'); ?>" id="login-email">
+                    </div>
+                    
+                    <div class="kl-form-group">
+                        <label class="kl-form-label">Password</label>
+                        <div class="kl-password-wrap">
+                            <input type="password" name="paswd" class="kl-input" placeholder="Masukkan password" required id="login-password">
+                            <button type="button" class="kl-password-toggle" onclick="togglePassword()" id="toggle-password">👁️</button>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="kl-btn kl-btn-primary kl-btn-full kl-btn-lg" style="margin-top: 8px;" id="login-submit">
+                        Masuk
+                    </button>
+                <?= form_close() ?>
+
+                <div class="kl-auth-divider">atau</div>
+
+                <p class="kl-text-center" style="font-size: 14px; color: var(--kl-muted);">
+                    Belum punya akun? 
+                    <a href="#" style="font-weight: 600;">Daftar di sini →</a>
+                </p>
+            </div>
         </div>
     </div>
 
+    <script>
+        function togglePassword() {
+            const input = document.getElementById('login-password');
+            const btn = document.getElementById('toggle-password');
+            if (input.type === 'password') {
+                input.type = 'text';
+                btn.textContent = '🙈';
+            } else {
+                input.type = 'password';
+                btn.textContent = '👁️';
+            }
+        }
+    </script>
 </body>
 </html>

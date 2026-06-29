@@ -1,226 +1,221 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $title; ?></title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    
-    <style>
-        /* 1. Background sama dengan Dashboard */
-        body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
-
-        /* 2. Navbar sama dengan Dashboard */
-        .navbar {
-            background: linear-gradient(90deg, #1a1a2e 0%, #16213e 100%) !important;
-            border-bottom: 3px solid #667eea;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
-        .navbar-brand {
-            font-weight: 700;
-            font-size: 1.5rem;
-            letter-spacing: 0.5px;
-        }
-        .logout-btn {
-            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
-            border: none;
-            padding: 0.4rem 1.2rem;
-            border-radius: 25px;
-            font-weight: 600;
-            color: white;
-        }
-        .logout-btn:hover {
-            background: linear-gradient(135deg, #ee5a5a 0%, #e34559 100%);
-            color: white;
-        }
-
-        /* 3. Card Pembungkus Konten Utama */
-        .content-card {
-            border: none;
-            border-radius: 16px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-            background: white;
-            overflow: hidden;
-        }
-        .card-header-custom {
-            padding: 2rem 2.5rem;
-            border-bottom: 1px solid #f1f5f9;
-        }
-
-        /* 4. Tombol Aksi */
-        .btn-gradient {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        .btn-gradient:hover {
-            background: linear-gradient(135deg, #5568d3 0%, #6a3f91 100%);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
-        }
-
-        /* 5. Estetika Tabel & Gambar */
-        .img-kuliner {
-            width: 70px;
-            height: 70px;
-            object-fit: cover; 
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            transition: transform 0.2s ease-in-out;
-        }
-        .img-kuliner:hover {
-            transform: scale(1.1);
-        }
-        .img-placeholder {
-            width: 70px;
-            height: 70px;
-            border-radius: 8px;
-            border: 1.5px dashed #cbd5e1;
-            background-color: #f8fafc;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: #94a3b8;
-        }
-        .table-hover tbody tr:hover {
-            background-color: #f8fafc;
-        }
-    </style>
+    <meta name="description" content="Kelola data kuliner — Kuliner Admin">
+    <title><?= esc($title) ?> — Kuliner</title>
+    <link rel="stylesheet" href="<?= base_url('kuliner.css') ?>">
 </head>
 <body>
+    <div class="kl-layout">
+        <!-- Sidebar Admin -->
+        <aside class="kl-sidebar">
+            <div class="kl-sidebar-header">
+                <a href="<?= base_url('admin/dashboard') ?>" class="kl-logo" style="font-size: 1.35rem; text-decoration: none;">
+                    🍽️ <span>Kul</span>ine
+                </a>
+                <span class="kl-admin-badge" style="margin-left: 8px;">Admin</span>
+            </div>
+            <div class="kl-sidebar-user">
+                <div class="kl-avatar" style="width: 40px; height: 40px; font-size: 16px;">
+                    <?= strtoupper(substr(session()->get('nama'), 0, 1)) ?>
+                </div>
+                <div class="kl-sidebar-user-info">
+                    <h4 style="font-size: 14px; font-weight: 600; color: var(--kl-dark); margin: 0 0 2px 0;"><?= esc(session()->get('nama')) ?></h4>
+                    <span class="kl-badge kl-badge-kategori" style="font-size: 10px;">Admin</span>
+                </div>
+            </div>
+            <nav class="kl-sidebar-nav">
+                <a href="<?= base_url('admin/dashboard') ?>">📊 Dashboard</a>
+                <a href="<?= base_url('kuliner') ?>" class="active">🍽️ Kelola Kuliner</a>
+                <a href="<?= base_url('kategori') ?>">🏷️ Kategori</a>
+                <a href="<?= base_url('tag') ?>">🔖 Tag</a>
+                <a href="<?= base_url('review') ?>">⭐ Kelola Ulasan</a>
+            </nav>
+        </aside>
 
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="<?= base_url('dashboard'); ?>">
-                <i class="bi bi-shop-window me-2"></i>Aplikasi Kuliner
-            </a>
-            <div class="ms-auto">
-                <span class="text-light me-3 d-none d-md-inline">
-                    <i class="bi bi-person-circle"></i> <?= session()->get('nama'); ?>
-                </span>
-                <a href="<?= base_url('logout'); ?>" class="logout-btn btn btn-sm">
-                    <i class="bi bi-box-arrow-right"></i> Logout
+        <!-- Main -->
+        <main class="kl-main" style="background: var(--kl-bg); position: relative;">
+            <div class="kl-topbar-actions">
+                <a href="<?= base_url('logout') ?>" class="kl-logout-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                    <span>Logout</span>
                 </a>
             </div>
-        </div>
-    </nav>
-
-    <div class="container my-5">
-        <div class="content-card">
-            
-            <div class="card-header-custom d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
-                <div>
-                    <h3 class="fw-bold text-dark mb-1"><i class="bi bi-card-list me-2"></i>Daftar Kuliner</h3>
-                    <p class="text-muted mb-0">Kelola direktori tempat dan menu makanan sistem Anda.</p>
+            <div class="kl-main-content">
+                <!-- Breadcrumb -->
+                <div class="kl-breadcrumb">
+                    <a href="<?= base_url('admin/dashboard') ?>">Dashboard</a>
+                    <span class="kl-breadcrumb-sep">›</span>
+                    <span>Kelola Kuliner</span>
                 </div>
-                <div class="d-flex gap-2">
-                    <a href="<?= base_url('dashboard'); ?>" class="btn btn-outline-secondary rounded-pill px-3 shadow-sm d-flex align-items-center">
-                        <i class="bi bi-arrow-left me-1"></i> Kembali
+
+                <!-- Page Header -->
+                <div class="kl-page-header kl-flex-between">
+                    <div>
+                        <h1>Kelola Kuliner</h1>
+                        <p>Semua data tempat kuliner dalam sistem.</p>
+                    </div>
+                    <a href="<?= base_url('kuliner/create') ?>" class="kl-btn kl-btn-primary">
+                        ➕ Tambah Data
                     </a>
-                    <?php if (session()->get('role') === 'admin'): ?>
-                        <a href="<?= base_url('kuliner/create'); ?>" class="btn btn-gradient rounded-pill px-4 shadow-sm d-flex align-items-center">
-                            <i class="bi bi-plus-lg me-1"></i> Tambah Data
-                        </a>
-                    <?php endif; ?>
                 </div>
-            </div>
 
-            <?php if (session()->getFlashdata('success')) : ?>
-                <div class="px-4 pt-3">
-                    <div class="alert alert-success alert-dismissible fade show shadow-sm border-0 mb-0 rounded-3" role="alert">
-                        <i class="bi bi-check-circle-fill me-2"></i> <?= session()->getFlashdata('success'); ?>
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <!-- Flash Message -->
+                <?php if (session()->getFlashdata('success')): ?>
+                    <div class="kl-alert kl-alert-success" id="flash-alert">
+                        <span>✅</span>
+                        <div style="flex: 1;"><?= session()->getFlashdata('success') ?></div>
+                        <button class="kl-alert-close" onclick="this.parentElement.remove()">×</button>
+                    </div>
+                <?php endif; ?>
+
+                <!-- Filter Tabs -->
+                <div class="kl-flex-between kl-mb-md" style="flex-wrap: wrap; gap: 12px; margin-bottom: 24px;">
+                    <div class="kl-filter-tabs" id="filter-tabs">
+                        <button class="kl-filter-tab active" data-filter="all">Semua</button>
+                        <button class="kl-filter-tab" data-filter="active">Aktif</button>
+                        <button class="kl-filter-tab" data-filter="pending">Menunggu</button>
+                        <button class="kl-filter-tab" data-filter="rejected">Ditolak</button>
+                    </div>
+                    <div style="display: flex; gap: 8px;">
+                        <input type="text" class="kl-input" placeholder="🔍 Cari nama kuliner..." style="width: 260px; padding: 8px 14px; font-size: 13px;" id="search-input">
                     </div>
                 </div>
-            <?php endif; ?>
 
-            <div class="card-body p-0 mt-2">
-                <div class="table-responsive">
-                    <table class="table table-hover table-borderless align-middle mb-0">
-                        <thead class="border-bottom" style="background-color: #f8fafc;">
-                            <tr>
-                                <th class="py-3 px-4 text-center text-muted" width="5%">No</th>
-                                <th class="py-3 px-4 text-muted" width="12%">Foto</th>
-                                <th class="py-3 px-4 text-muted" width="23%">Nama Kuliner</th>
-                                <th class="py-3 px-4 text-muted" width="40%">Alamat</th>
-                                <?php if (session()->get('role') === 'admin'): ?>
-                                    <th class="py-3 px-4 text-center text-muted" width="20%">Aksi</th>
-                                <?php endif; ?>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php $i = 1; foreach ($kuliner as $k) : ?>
-                            <tr class="border-bottom">
-                                <td class="px-4 text-center fw-semibold text-secondary"><?= $i++; ?></td>
-                                <td class="px-4 py-3">
-                                    <?php if (! empty($k['gambar'])): ?>
-                                        
-                                        <a href="#" data-bs-toggle="modal" data-bs-target="#modalFoto<?= $k['id']; ?>">
-                                            <img src="<?= base_url('uploads/kuliner/' . $k['gambar']); ?>" class="img-kuliner" style="cursor: zoom-in;" alt="Foto <?= $k['nama']; ?>" title="Klik untuk memperbesar">
-                                        </a>
-
-                                        <div class="modal fade" id="modalFoto<?= $k['id']; ?>" tabindex="-1" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-centered modal-lg">
-                                                <div class="modal-content bg-transparent border-0">
-                                                    <div class="modal-body text-center position-relative">
-                                                        
-                                                        <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-0" data-bs-dismiss="modal" aria-label="Close" style="background-color: rgba(0,0,0,0.6); padding: 10px; border-radius: 50%; z-index: 10;"></button>
-                                                        
-                                                        <img src="<?= base_url('uploads/kuliner/' . $k['gambar']); ?>" class="img-fluid rounded-4 shadow-lg" alt="Foto Besar <?= $k['nama']; ?>">
-                                                        
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    <?php else: ?>
-                                        <div class="img-placeholder">
-                                            <i class="bi bi-image fs-5"></i>
-                                            <small style="font-size: 0.65rem;">Kosong</small>
-                                        </div>
+                <!-- Cards Grid -->
+                <div class="kuliner-grid" id="kuliner-grid">
+                    <?php if (!empty($kuliner)): ?>
+                        <?php foreach ($kuliner as $k): 
+                            $userName = $k['user_name'] ?? 'User';
+                            $userInitial = strtoupper(substr($userName, 0, 1));
+                        ?>
+                        <div class="card-kuliner status-<?= esc($k['status']) ?>" data-status="<?= esc($k['status']) ?>" data-name="<?= strtolower(esc($k['nama'])) ?>">
+                            <!-- Header Strip -->
+                            <div class="card-header-strip">
+                                <div class="card-header-user">
+                                    <div class="card-header-avatar"><?= $userInitial ?></div>
+                                    <div class="card-header-name" title="<?= esc($userName) ?>"><?= esc($userName) ?></div>
+                                </div>
+                                <div class="card-header-actions">
+                                    <?php if ($k['status'] === 'pending'): ?>
+                                        <a href="<?= base_url('kuliner/approve/' . $k['id']) ?>" class="kl-btn kl-btn-sm" style="background: var(--kl-success); color: white; padding: 4px 10px; font-size: 11px;">Setujui</a>
+                                        <a href="#" class="kl-btn kl-btn-outline kl-btn-sm" style="border-color: var(--kl-danger); color: var(--kl-danger); padding: 4px 10px; font-size: 11px;" onclick="openRejectModal('<?= $k['id'] ?>', '<?= esc(addslashes($k['nama'])) ?>'); return false;">Tolak</a>
+                                    <?php elseif ($k['status'] === 'active'): ?>
+                                        <a href="<?= base_url('kuliner/edit/' . $k['id']) ?>" class="kl-btn kl-btn-outline kl-btn-sm" style="border-color: #2563EB; color: #2563EB; padding: 4px 10px; font-size: 11px;">Edit</a>
+                                        <a href="<?= base_url('kuliner/delete/' . $k['id']) ?>" class="kl-btn kl-btn-sm" style="color: var(--kl-danger); background: transparent; padding: 4px; font-size: 14px;" onclick="return confirm('Yakin hapus?');">🗑️</a>
+                                    <?php elseif ($k['status'] === 'rejected'): ?>
+                                        <a href="<?= base_url('kuliner/edit/' . $k['id']) ?>" class="kl-btn kl-btn-outline kl-btn-sm" style="color: var(--kl-muted); border-color: var(--kl-border); padding: 4px 10px; font-size: 11px;">Review Lagi</a>
+                                        <a href="<?= base_url('kuliner/delete/' . $k['id']) ?>" class="kl-btn kl-btn-sm" style="color: var(--kl-danger); background: transparent; padding: 4px; font-size: 14px;" onclick="return confirm('Yakin hapus?');">🗑️</a>
                                     <?php endif; ?>
-                                </td>
-                                <td class="px-4 fw-bold text-dark"><?= $k['nama']; ?></td>
-                                <td class="px-4 text-secondary" style="font-size: 0.95rem;"><?= $k['alamat']; ?></td>
-                                <?php if (session()->get('role') === 'admin'): ?>
-                                    <td class="px-4 text-center">
-                                        <div class="d-flex justify-content-center gap-2">
-                                            <a href="<?= base_url('kuliner/edit/' . $k['id']); ?>" class="btn btn-warning btn-sm text-dark px-3 rounded-pill shadow-sm" title="Edit Data">
-                                                <i class="bi bi-pencil-square"></i>
-                                            </a>
-                                            <a href="<?= base_url('kuliner/delete/' . $k['id']); ?>" class="btn btn-danger btn-sm px-3 rounded-pill shadow-sm" onclick="return confirm('Tindakan ini tidak dapat dibatalkan. Yakin ingin menghapus data ini?');" title="Hapus Data">
-                                                <i class="bi bi-trash"></i>
-                                            </a>
-                                        </div>
-                                    </td>
+                                </div>
+                            </div>
+
+                            <a href="<?= base_url('kuliner/detail/' . $k['id']) ?>" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex: 1;">
+                                <!-- Photo Grid -->
+                            <div class="card-photo-grid <?= empty($k['foto2']) ? 'card-photo-single' : '' ?>">
+                                <?php if (!empty($k['gambar'])): ?>
+                                    <img src="<?= base_url('uploads/kuliner/' . $k['gambar']) ?>" alt="<?= esc($k['nama']) ?>" loading="lazy">
+                                    <?php if (!empty($k['foto2'])): ?>
+                                        <img src="<?= base_url('uploads/kuliner/' . $k['foto2']) ?>" alt="<?= esc($k['nama']) ?> 2" loading="lazy">
+                                    <?php endif; ?>
+                                <?php else: ?>
+                                    <div class="card-photo-placeholder">Foto belum tersedia</div>
                                 <?php endif; ?>
-                            </tr>
-                            <?php endforeach; ?>
-                            
-                            <?php if(empty($kuliner)): ?>
-                            <tr>
-                                <td colspan="5" class="text-center py-5 text-muted">
-                                    <i class="bi bi-inbox fs-1 d-block mb-2 opacity-50"></i>
-                                    Belum ada data kuliner. Silakan tambah data baru.
-                                </td>
-                            </tr>
-                            <?php endif; ?>
-                        </tbody>
-                    </table>
+                            </div>
+
+                            <!-- Name Strip -->
+                            <div class="card-name-strip">
+                                <?= esc($k['nama']) ?>
+                            </div>
+                            </a>
+                        </div>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
                 </div>
+
+                <?php if (empty($kuliner)): ?>
+                    <div class="kl-empty" id="empty-state">
+                        <div class="kl-empty-icon">📭</div>
+                        <h3>Belum ada data kuliner</h3>
+                        <p>Silakan tambah data baru untuk memulai.</p>
+                        <a href="<?= base_url('kuliner/create') ?>" class="kl-btn kl-btn-primary">➕ Tambah Data</a>
+                    </div>
+                <?php endif; ?>
             </div>
-            
+        </main>
+    </div>
+
+    <!-- Reject Modal -->
+    <div class="kl-modal-overlay" id="reject-modal">
+        <div class="kl-modal">
+            <div class="kl-modal-header">
+                <h3 style="font-size: 18px; font-weight: 700; color: var(--kl-dark); margin: 0;">Tolak Pengajuan</h3>
+            </div>
+            <form id="reject-form" action="" method="get">
+                <div class="kl-modal-body">
+                    <p style="font-size: 14px; margin-bottom: 12px;">Anda akan menolak pengajuan: <br><strong id="reject-kuliner-name">Nama Kuliner</strong></p>
+                    <div class="kl-form-group" style="margin-bottom: 0;">
+                        <textarea name="alasan_penolakan" class="kl-textarea" placeholder="Alasan penolakan untuk kontributor..." required style="min-height: 80px;"></textarea>
+                        <p style="font-size: 12px; color: var(--kl-muted); margin-top: 6px;">Alasan ini akan dikirim ke kontributor (simulasi UI).</p>
+                    </div>
+                </div>
+                <div class="kl-modal-footer">
+                    <button type="button" class="kl-btn kl-btn-outline" onclick="closeRejectModal()">Batalkan</button>
+                    <button type="submit" class="kl-btn kl-btn-primary" style="background: var(--kl-danger); border-color: var(--kl-danger);">Tolak</button>
+                </div>
+            </form>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Filter tabs
+        document.querySelectorAll('#filter-tabs .kl-filter-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('#filter-tabs .kl-filter-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                const filter = this.dataset.filter;
+                document.querySelectorAll('#kuliner-grid .card-kuliner').forEach(card => {
+                    if (filter === 'all' || card.dataset.status === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Search
+        document.getElementById('search-input')?.addEventListener('input', function() {
+            const q = this.value.toLowerCase();
+            document.querySelectorAll('#kuliner-grid .card-kuliner').forEach(card => {
+                card.style.display = card.dataset.name?.includes(q) ? 'flex' : 'none';
+            });
+        });
+
+        // Auto-dismiss flash
+        setTimeout(() => {
+            const flash = document.getElementById('flash-alert');
+            if (flash) flash.style.opacity = '0';
+            setTimeout(() => flash?.remove(), 300);
+        }, 4000);
+
+        // Reject Modal
+        function openRejectModal(id, name) {
+            document.getElementById('reject-kuliner-name').textContent = name;
+            // Gunakan method GET sesuai existing route, biarkan controller yg handle status
+            document.getElementById('reject-form').action = '<?= base_url('kuliner/reject') ?>/' + id;
+            document.getElementById('reject-modal').classList.add('active');
+        }
+
+        function closeRejectModal() {
+            document.getElementById('reject-modal').classList.remove('active');
+        }
+
+        document.getElementById('reject-modal').addEventListener('click', function(e) {
+            if (e.target === this) closeRejectModal();
+        });
+    </script>
 </body>
 </html>

@@ -1,0 +1,27 @@
+### ═══════════════════════════════════════════
+### WEBSERVICE SERVER — Testing Endpoint API
+### ═══════════════════════════════════════════
+
+### 1. Ambil semua kuliner aktif (tanpa filter radius)
+GET http://localhost:8080/api/kuliner
+Accept: application/json
+Authorization: Bearer my-secret-token
+
+### 2. Ambil kuliner dalam radius 5km dari kampus UDINUS
+GET http://localhost:8080/api/kuliner?lat=-6.9828&lng=110.4092&radius=5
+Accept: application/json
+Authorization: Bearer my-secret-token
+
+### 3. Ambil kuliner dengan pagination (halaman 2, 5 per halaman)
+GET http://localhost:8080/api/kuliner?page=2&per_page=5
+Accept: application/json
+Authorization: Bearer my-secret-token
+
+### 4. Test tanpa API Key (harus ditolak — 401 Unauthorized)
+GET http://localhost:8080/api/kuliner
+Accept: application/json
+
+### 5. Test dengan API Key yang salah (harus ditolak — 401 Unauthorized)
+GET http://localhost:8080/api/kuliner
+Accept: application/json
+Authorization: Bearer token-yang-salah

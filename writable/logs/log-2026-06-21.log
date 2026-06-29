@@ -1,0 +1,2002 @@
+DEBUG - 2026-06-21 12:23:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:24:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:24:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 12:24:24 --> CSRF token verified.
+DEBUG - 2026-06-21 12:24:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-06-21 12:24:28 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'db_kuliner', 3306, '', 0)
+#1 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\projectpwl22\app\Controllers\login.php(53): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\CodeIgniter.php(951): App\Controllers\Login->auth()
+#8 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#9 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\projectpwl22\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#5 C:\xampp\htdocs\projectpwl22\app\Controllers\login.php(53): CodeIgniter\BaseModel->first()
+#6 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\CodeIgniter.php(951): App\Controllers\Login->auth()
+#7 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#8 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\projectpwl22\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2026-06-21 12:24:28 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: POST, Route: login-auth]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\login.php(53): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Login->auth()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+INFO - 2026-06-21 12:24:28 --> CSRF token verified.
+DEBUG - 2026-06-21 12:24:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-06-21 12:24:33 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'db_kuliner', 3306, '', 0)
+#1 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\projectpwl22\app\Controllers\login.php(53): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\CodeIgniter.php(951): App\Controllers\Login->auth()
+#8 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#9 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\projectpwl22\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#5 C:\xampp\htdocs\projectpwl22\app\Controllers\login.php(53): CodeIgniter\BaseModel->first()
+#6 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\CodeIgniter.php(951): App\Controllers\Login->auth()
+#7 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#8 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\projectpwl22\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2026-06-21 12:24:33 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: POST, Route: login-auth]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\login.php(53): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Login->auth()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+INFO - 2026-06-21 12:24:46 --> CSRF token verified.
+DEBUG - 2026-06-21 12:24:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-06-21 12:24:50 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'db_kuliner', 3306, '', 0)
+#1 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\projectpwl22\app\Controllers\login.php(53): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\CodeIgniter.php(951): App\Controllers\Login->auth()
+#8 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#9 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\projectpwl22\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#5 C:\xampp\htdocs\projectpwl22\app\Controllers\login.php(53): CodeIgniter\BaseModel->first()
+#6 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\CodeIgniter.php(951): App\Controllers\Login->auth()
+#7 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#8 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\projectpwl22\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2026-06-21 12:24:50 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: POST, Route: login-auth]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\login.php(53): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Login->auth()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+INFO - 2026-06-21 12:24:51 --> CSRF token verified.
+DEBUG - 2026-06-21 12:24:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-06-21 12:24:55 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'db_kuliner', 3306, '', 0)
+#1 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\projectpwl22\app\Controllers\login.php(53): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\CodeIgniter.php(951): App\Controllers\Login->auth()
+#8 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#9 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\projectpwl22\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#5 C:\xampp\htdocs\projectpwl22\app\Controllers\login.php(53): CodeIgniter\BaseModel->first()
+#6 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\CodeIgniter.php(951): App\Controllers\Login->auth()
+#7 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#8 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\projectpwl22\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\projectpwl22\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2026-06-21 12:24:55 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: POST, Route: login-auth]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\login.php(53): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Login->auth()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+INFO - 2026-06-21 12:33:22 --> CSRF token verified.
+DEBUG - 2026-06-21 12:33:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:33:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:33:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:34:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:34:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 12:34:16 --> CSRF token verified.
+DEBUG - 2026-06-21 12:34:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:34:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:34:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:34:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:34:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:38:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:38:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:38:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 12:38:33 --> CSRF token verified.
+DEBUG - 2026-06-21 12:38:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:38:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:38:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:38:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:38:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:38:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:38:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:38:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:40:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:40:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:40:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:40:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:40:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:40:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:40:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:40:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:46:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:46:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:46:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:47:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:47:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:47:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:47:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:47:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:47:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:47:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:47:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:47:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-21 12:47:43 --> CodeIgniter\Security\Exceptions\SecurityException: The action you requested is not allowed.
+[Method: POST, Route: kategori/store]
+in SYSTEMPATH\Security\Security.php on line 258.
+ 1 SYSTEMPATH\Security\Security.php(258): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(52): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(241): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 5 SYSTEMPATH\CodeIgniter.php(465): CodeIgniter\Filters\Filters->run('kategori/store', 'before')
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+DEBUG - 2026-06-21 12:47:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:47:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:48:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:48:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:48:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:48:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-21 12:48:15 --> CodeIgniter\Security\Exceptions\SecurityException: The action you requested is not allowed.
+[Method: POST, Route: tag/store]
+in SYSTEMPATH\Security\Security.php on line 258.
+ 1 SYSTEMPATH\Security\Security.php(258): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(52): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(241): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 5 SYSTEMPATH\CodeIgniter.php(465): CodeIgniter\Filters\Filters->run('tag/store', 'before')
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+CRITICAL - 2026-06-21 12:48:20 --> CodeIgniter\Security\Exceptions\SecurityException: The action you requested is not allowed.
+[Method: POST, Route: tag/store]
+in SYSTEMPATH\Security\Security.php on line 258.
+ 1 SYSTEMPATH\Security\Security.php(258): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(52): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(241): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 5 SYSTEMPATH\CodeIgniter.php(465): CodeIgniter\Filters\Filters->run('tag/store', 'before')
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+DEBUG - 2026-06-21 12:49:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:49:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:49:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:49:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:49:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:49:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:49:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 12:49:23 --> CSRF token verified.
+DEBUG - 2026-06-21 12:49:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:49:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:55:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:55:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:55:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:55:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 12:55:24 --> CSRF token verified.
+DEBUG - 2026-06-21 12:55:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:55:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:55:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:57:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:57:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:57:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 12:57:37 --> CSRF token verified.
+DEBUG - 2026-06-21 12:57:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:57:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:58:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:58:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:58:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:58:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:58:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:58:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:58:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:58:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:58:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:58:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:58:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:58:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:59:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:59:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 12:59:09 --> CSRF token verified.
+DEBUG - 2026-06-21 12:59:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:59:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:59:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:59:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:59:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:59:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:59:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:59:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:59:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:59:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 12:59:46 --> CSRF token verified.
+DEBUG - 2026-06-21 12:59:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:59:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:59:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:59:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 13:00:05 --> CSRF token verified.
+DEBUG - 2026-06-21 13:00:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:00:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 13:00:28 --> CSRF token verified.
+DEBUG - 2026-06-21 13:00:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:00:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:00:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:00:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:00:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:00:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:00:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:00:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:00:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:00:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:00:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:00:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:00:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:00:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:00:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:00:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:00:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:00:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:00:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:00:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:00:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:00:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:03:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:03:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:03:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 13:03:45 --> CSRF token verified.
+DEBUG - 2026-06-21 13:03:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:03:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:03:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:07:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:08:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:08:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:15:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:15:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-06-21 13:15:16 --> Unknown column 'kuliner.id_kategori' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = :kuliner.status:
+GROUP BY `kuliner`.`id`', [...], false)
+ 5 APPPATH\Controllers\Kuliner.php(54): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+CRITICAL - 2026-06-21 13:15:16 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'kuliner.id_kategori' in 'on clause'
+[Method: GET, Route: kuliner]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = :kuliner.status:
+GROUP BY `kuliner`.`id`', [...], false)
+ 2 APPPATH\Controllers\Kuliner.php(54): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->index()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+CRITICAL - 2026-06-21 13:15:16 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'kuliner.id_kategori' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = :kuliner.status:
+GROUP BY `kuliner`.`id`', [...], false)
+ 4 APPPATH\Controllers\Kuliner.php(54): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->index()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+CRITICAL - 2026-06-21 13:15:16 --> [Caused by] mysqli_sql_exception: Unknown column 'kuliner.id_kategori' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = :kuliner.status:
+GROUP BY `kuliner`.`id`', [...], false)
+ 5 APPPATH\Controllers\Kuliner.php(54): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+DEBUG - 2026-06-21 13:15:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:15:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-06-21 13:15:21 --> Unknown column 'kuliner.id_kategori' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = :kuliner.status:
+GROUP BY `kuliner`.`id`', [...], false)
+ 5 APPPATH\Controllers\Kuliner.php(54): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+CRITICAL - 2026-06-21 13:15:21 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'kuliner.id_kategori' in 'on clause'
+[Method: GET, Route: kuliner]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = :kuliner.status:
+GROUP BY `kuliner`.`id`', [...], false)
+ 2 APPPATH\Controllers\Kuliner.php(54): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->index()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+CRITICAL - 2026-06-21 13:15:21 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'kuliner.id_kategori' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = :kuliner.status:
+GROUP BY `kuliner`.`id`', [...], false)
+ 4 APPPATH\Controllers\Kuliner.php(54): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->index()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+CRITICAL - 2026-06-21 13:15:21 --> [Caused by] mysqli_sql_exception: Unknown column 'kuliner.id_kategori' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = :kuliner.status:
+GROUP BY `kuliner`.`id`', [...], false)
+ 5 APPPATH\Controllers\Kuliner.php(54): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+DEBUG - 2026-06-21 13:19:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:19:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-21 13:19:27 --> ErrorException: Undefined property: App\Controllers\Kuliner::$db
+[Method: GET, Route: kuliner]
+in APPPATH\Controllers\Kuliner.php on line 27.
+ 1 APPPATH\Controllers\Kuliner.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Kuliner::$db', 'C:\\xampp\\htdocs\\projectpwl22\\app\\Controllers\\Kuliner.php', 27)
+ 2 APPPATH\Controllers\Kuliner.php(52): App\Controllers\Kuliner->buildKulinerMetaQuery()
+ 3 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->index()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+DEBUG - 2026-06-21 13:19:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:19:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-21 13:19:52 --> ErrorException: Undefined property: App\Controllers\Kuliner::$db
+[Method: GET, Route: kuliner]
+in APPPATH\Controllers\Kuliner.php on line 27.
+ 1 APPPATH\Controllers\Kuliner.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Kuliner::$db', 'C:\\xampp\\htdocs\\projectpwl22\\app\\Controllers\\Kuliner.php', 27)
+ 2 APPPATH\Controllers\Kuliner.php(52): App\Controllers\Kuliner->buildKulinerMetaQuery()
+ 3 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->index()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+DEBUG - 2026-06-21 13:21:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-06-21 13:21:38 --> Unknown column 'k.id_kategori' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT `k`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM (`kuliner`, `kuliner` `k`)
+LEFT JOIN `kategori` ON `kategori`.`id` = `k`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `k`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `k`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `k`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM (`kuliner`, `kuliner` `k`)
+LEFT JOIN `kategori` ON `kategori`.`id` = `k`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `k`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `k`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `k`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM (`kuliner`, `kuliner` `k`)
+LEFT JOIN `kategori` ON `kategori`.`id` = `k`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `k`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `k`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `k`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM (`kuliner`, `kuliner` `k`)
+LEFT JOIN `kategori` ON `kategori`.`id` = `k`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `k`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = :kuliner.status:
+GROUP BY `k`.`id`', [...], false)
+ 5 APPPATH\Controllers\Kuliner.php(55): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+CRITICAL - 2026-06-21 13:21:38 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'k.id_kategori' in 'on clause'
+[Method: GET, Route: kuliner]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `k`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM (`kuliner`, `kuliner` `k`)
+LEFT JOIN `kategori` ON `kategori`.`id` = `k`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `k`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = :kuliner.status:
+GROUP BY `k`.`id`', [...], false)
+ 2 APPPATH\Controllers\Kuliner.php(55): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->index()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+CRITICAL - 2026-06-21 13:21:38 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'k.id_kategori' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `k`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM (`kuliner`, `kuliner` `k`)
+LEFT JOIN `kategori` ON `kategori`.`id` = `k`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `k`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `k`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `k`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM (`kuliner`, `kuliner` `k`)
+LEFT JOIN `kategori` ON `kategori`.`id` = `k`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `k`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `k`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `k`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM (`kuliner`, `kuliner` `k`)
+LEFT JOIN `kategori` ON `kategori`.`id` = `k`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `k`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = :kuliner.status:
+GROUP BY `k`.`id`', [...], false)
+ 4 APPPATH\Controllers\Kuliner.php(55): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->index()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+CRITICAL - 2026-06-21 13:21:38 --> [Caused by] mysqli_sql_exception: Unknown column 'k.id_kategori' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT `k`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM (`kuliner`, `kuliner` `k`)
+LEFT JOIN `kategori` ON `kategori`.`id` = `k`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `k`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `k`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `k`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM (`kuliner`, `kuliner` `k`)
+LEFT JOIN `kategori` ON `kategori`.`id` = `k`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `k`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `k`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `k`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM (`kuliner`, `kuliner` `k`)
+LEFT JOIN `kategori` ON `kategori`.`id` = `k`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `k`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `k`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `k`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM (`kuliner`, `kuliner` `k`)
+LEFT JOIN `kategori` ON `kategori`.`id` = `k`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `k`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = :kuliner.status:
+GROUP BY `k`.`id`', [...], false)
+ 5 APPPATH\Controllers\Kuliner.php(55): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+DEBUG - 2026-06-21 13:21:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:21:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:21:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:21:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-06-21 13:21:53 --> Unknown column 'k.id_kategori' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT `k`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM (`kuliner`, `kuliner` `k`)
+LEFT JOIN `kategori` ON `kategori`.`id` = `k`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `k`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `k`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `k`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM (`kuliner`, `kuliner` `k`)
+LEFT JOIN `kategori` ON `kategori`.`id` = `k`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `k`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `k`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `k`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM (`kuliner`, `kuliner` `k`)
+LEFT JOIN `kategori` ON `kategori`.`id` = `k`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `k`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `k`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `k`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM (`kuliner`, `kuliner` `k`)
+LEFT JOIN `kategori` ON `kategori`.`id` = `k`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `k`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = :kuliner.status:
+GROUP BY `k`.`id`', [...], false)
+ 5 APPPATH\Controllers\Kuliner.php(55): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+CRITICAL - 2026-06-21 13:21:53 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'k.id_kategori' in 'on clause'
+[Method: GET, Route: kuliner]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `k`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM (`kuliner`, `kuliner` `k`)
+LEFT JOIN `kategori` ON `kategori`.`id` = `k`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `k`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = :kuliner.status:
+GROUP BY `k`.`id`', [...], false)
+ 2 APPPATH\Controllers\Kuliner.php(55): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->index()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+CRITICAL - 2026-06-21 13:21:53 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'k.id_kategori' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `k`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM (`kuliner`, `kuliner` `k`)
+LEFT JOIN `kategori` ON `kategori`.`id` = `k`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `k`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `k`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `k`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM (`kuliner`, `kuliner` `k`)
+LEFT JOIN `kategori` ON `kategori`.`id` = `k`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `k`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `k`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `k`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM (`kuliner`, `kuliner` `k`)
+LEFT JOIN `kategori` ON `kategori`.`id` = `k`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `k`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = :kuliner.status:
+GROUP BY `k`.`id`', [...], false)
+ 4 APPPATH\Controllers\Kuliner.php(55): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->index()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+CRITICAL - 2026-06-21 13:21:53 --> [Caused by] mysqli_sql_exception: Unknown column 'k.id_kategori' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT `k`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM (`kuliner`, `kuliner` `k`)
+LEFT JOIN `kategori` ON `kategori`.`id` = `k`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `k`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `k`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `k`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM (`kuliner`, `kuliner` `k`)
+LEFT JOIN `kategori` ON `kategori`.`id` = `k`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `k`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `k`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `k`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM (`kuliner`, `kuliner` `k`)
+LEFT JOIN `kategori` ON `kategori`.`id` = `k`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `k`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `k`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `k`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM (`kuliner`, `kuliner` `k`)
+LEFT JOIN `kategori` ON `kategori`.`id` = `k`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `k`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = :kuliner.status:
+GROUP BY `k`.`id`', [...], false)
+ 5 APPPATH\Controllers\Kuliner.php(55): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+DEBUG - 2026-06-21 13:22:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-06-21 13:22:22 --> Unknown column 'k.id_kategori' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT `k`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM (`kuliner`, `kuliner` `k`)
+LEFT JOIN `kategori` ON `kategori`.`id` = `k`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `k`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `k`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `k`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM (`kuliner`, `kuliner` `k`)
+LEFT JOIN `kategori` ON `kategori`.`id` = `k`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `k`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `k`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `k`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM (`kuliner`, `kuliner` `k`)
+LEFT JOIN `kategori` ON `kategori`.`id` = `k`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `k`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `k`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `k`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM (`kuliner`, `kuliner` `k`)
+LEFT JOIN `kategori` ON `kategori`.`id` = `k`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `k`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = :kuliner.status:
+GROUP BY `k`.`id`', [...], false)
+ 5 APPPATH\Controllers\Kuliner.php(55): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+CRITICAL - 2026-06-21 13:22:22 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'k.id_kategori' in 'on clause'
+[Method: GET, Route: kuliner]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `k`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM (`kuliner`, `kuliner` `k`)
+LEFT JOIN `kategori` ON `kategori`.`id` = `k`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `k`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = :kuliner.status:
+GROUP BY `k`.`id`', [...], false)
+ 2 APPPATH\Controllers\Kuliner.php(55): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->index()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+CRITICAL - 2026-06-21 13:22:22 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'k.id_kategori' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `k`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM (`kuliner`, `kuliner` `k`)
+LEFT JOIN `kategori` ON `kategori`.`id` = `k`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `k`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `k`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `k`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM (`kuliner`, `kuliner` `k`)
+LEFT JOIN `kategori` ON `kategori`.`id` = `k`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `k`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `k`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `k`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM (`kuliner`, `kuliner` `k`)
+LEFT JOIN `kategori` ON `kategori`.`id` = `k`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `k`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = :kuliner.status:
+GROUP BY `k`.`id`', [...], false)
+ 4 APPPATH\Controllers\Kuliner.php(55): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->index()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+CRITICAL - 2026-06-21 13:22:22 --> [Caused by] mysqli_sql_exception: Unknown column 'k.id_kategori' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT `k`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM (`kuliner`, `kuliner` `k`)
+LEFT JOIN `kategori` ON `kategori`.`id` = `k`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `k`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `k`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `k`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM (`kuliner`, `kuliner` `k`)
+LEFT JOIN `kategori` ON `kategori`.`id` = `k`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `k`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `k`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `k`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM (`kuliner`, `kuliner` `k`)
+LEFT JOIN `kategori` ON `kategori`.`id` = `k`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `k`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `k`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `k`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM (`kuliner`, `kuliner` `k`)
+LEFT JOIN `kategori` ON `kategori`.`id` = `k`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `k`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = :kuliner.status:
+GROUP BY `k`.`id`', [...], false)
+ 5 APPPATH\Controllers\Kuliner.php(55): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+DEBUG - 2026-06-21 13:23:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-06-21 13:23:57 --> Unknown column 'kuliner.id_kategori' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = :kuliner.status:
+GROUP BY `kuliner`.`id`', [...], false)
+ 5 APPPATH\Controllers\Kuliner.php(54): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+CRITICAL - 2026-06-21 13:23:57 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'kuliner.id_kategori' in 'on clause'
+[Method: GET, Route: kuliner]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = :kuliner.status:
+GROUP BY `kuliner`.`id`', [...], false)
+ 2 APPPATH\Controllers\Kuliner.php(54): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->index()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+CRITICAL - 2026-06-21 13:23:57 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'kuliner.id_kategori' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = :kuliner.status:
+GROUP BY `kuliner`.`id`', [...], false)
+ 4 APPPATH\Controllers\Kuliner.php(54): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->index()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+CRITICAL - 2026-06-21 13:23:57 --> [Caused by] mysqli_sql_exception: Unknown column 'kuliner.id_kategori' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = :kuliner.status:
+GROUP BY `kuliner`.`id`', [...], false)
+ 5 APPPATH\Controllers\Kuliner.php(54): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+DEBUG - 2026-06-21 13:24:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-06-21 13:24:00 --> Unknown column 'kuliner.id_kategori' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = :kuliner.status:
+GROUP BY `kuliner`.`id`', [...], false)
+ 5 APPPATH\Controllers\Kuliner.php(54): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+CRITICAL - 2026-06-21 13:24:00 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'kuliner.id_kategori' in 'on clause'
+[Method: GET, Route: kuliner]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = :kuliner.status:
+GROUP BY `kuliner`.`id`', [...], false)
+ 2 APPPATH\Controllers\Kuliner.php(54): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->index()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+CRITICAL - 2026-06-21 13:24:00 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'kuliner.id_kategori' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = :kuliner.status:
+GROUP BY `kuliner`.`id`', [...], false)
+ 4 APPPATH\Controllers\Kuliner.php(54): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->index()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+CRITICAL - 2026-06-21 13:24:00 --> [Caused by] mysqli_sql_exception: Unknown column 'kuliner.id_kategori' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = :kuliner.status:
+GROUP BY `kuliner`.`id`', [...], false)
+ 5 APPPATH\Controllers\Kuliner.php(54): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+DEBUG - 2026-06-21 13:24:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:24:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 13:24:13 --> CSRF token verified.
+DEBUG - 2026-06-21 13:24:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:24:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:24:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-06-21 13:24:17 --> Unknown column 'kuliner.id_kategori' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = :kuliner.status:
+GROUP BY `kuliner`.`id`', [...], false)
+ 5 APPPATH\Controllers\Kuliner.php(54): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+CRITICAL - 2026-06-21 13:24:17 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'kuliner.id_kategori' in 'on clause'
+[Method: GET, Route: kuliner]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = :kuliner.status:
+GROUP BY `kuliner`.`id`', [...], false)
+ 2 APPPATH\Controllers\Kuliner.php(54): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->index()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+CRITICAL - 2026-06-21 13:24:17 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'kuliner.id_kategori' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = :kuliner.status:
+GROUP BY `kuliner`.`id`', [...], false)
+ 4 APPPATH\Controllers\Kuliner.php(54): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->index()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+CRITICAL - 2026-06-21 13:24:17 --> [Caused by] mysqli_sql_exception: Unknown column 'kuliner.id_kategori' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = :kuliner.status:
+GROUP BY `kuliner`.`id`', [...], false)
+ 5 APPPATH\Controllers\Kuliner.php(54): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+DEBUG - 2026-06-21 13:25:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-06-21 13:25:27 --> Unknown column 'kuliner.id_kategori' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = :kuliner.status:
+GROUP BY `kuliner`.`id`', [...], false)
+ 5 APPPATH\Controllers\Kuliner.php(54): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+CRITICAL - 2026-06-21 13:25:27 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'kuliner.id_kategori' in 'on clause'
+[Method: GET, Route: kuliner]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = :kuliner.status:
+GROUP BY `kuliner`.`id`', [...], false)
+ 2 APPPATH\Controllers\Kuliner.php(54): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->index()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+CRITICAL - 2026-06-21 13:25:27 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'kuliner.id_kategori' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = :kuliner.status:
+GROUP BY `kuliner`.`id`', [...], false)
+ 4 APPPATH\Controllers\Kuliner.php(54): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->index()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+CRITICAL - 2026-06-21 13:25:27 --> [Caused by] mysqli_sql_exception: Unknown column 'kuliner.id_kategori' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = \'active\'
+GROUP BY `kuliner`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `kuliner`.*, `kategori`.`nama` as `kategori_nama`, GROUP_CONCAT(DISTINCT tag.nama ORDER BY tag.nama SEPARATOR ", ") as tag_list
+FROM `kuliner`
+LEFT JOIN `kategori` ON `kategori`.`id` = `kuliner`.`id_kategori`
+LEFT JOIN `kuliner_tag` ON `kuliner_tag`.`kuliner_id` = `kuliner`.`id`
+LEFT JOIN `tag` ON `tag`.`id` = `kuliner_tag`.`tag_id`
+WHERE `kuliner`.`status` = :kuliner.status:
+GROUP BY `kuliner`.`id`', [...], false)
+ 5 APPPATH\Controllers\Kuliner.php(54): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Kuliner->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliner))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\projectpwl22\\public\\index.php')
+DEBUG - 2026-06-21 13:35:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:35:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:35:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:35:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:35:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:40:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:40:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:40:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 13:40:40 --> CSRF token verified.
+DEBUG - 2026-06-21 13:40:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:40:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:40:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:45:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:45:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 13:45:57 --> CSRF token verified.
+DEBUG - 2026-06-21 13:45:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:45:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:46:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:46:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:53:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 13:54:37 --> CSRF token verified.
+DEBUG - 2026-06-21 13:54:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:54:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:54:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:54:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 13:54:49 --> CSRF token verified.
+DEBUG - 2026-06-21 13:54:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:54:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:54:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:54:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:55:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:55:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:55:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:55:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:55:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 13:55:47 --> CSRF token verified.
+DEBUG - 2026-06-21 13:55:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:55:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:55:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:56:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:56:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:56:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:56:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:56:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:56:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 13:58:02 --> CSRF token verified.
+DEBUG - 2026-06-21 13:58:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:58:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:58:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:58:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 13:58:15 --> CSRF token verified.
+DEBUG - 2026-06-21 13:58:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:58:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:58:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:58:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:58:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:58:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:58:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:58:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:58:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:58:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:58:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 13:59:04 --> CSRF token verified.
+DEBUG - 2026-06-21 13:59:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:59:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:59:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 14:00:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:44:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:44:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 17:45:06 --> CSRF token verified.
+DEBUG - 2026-06-21 17:45:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:45:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:45:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:45:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:45:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:45:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:45:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:45:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:45:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:45:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:45:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:45:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 17:45:58 --> CSRF token verified.
+DEBUG - 2026-06-21 17:45:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:45:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:46:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 17:46:28 --> CSRF token verified.
+DEBUG - 2026-06-21 17:46:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:46:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:46:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:46:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 17:46:40 --> CSRF token verified.
+DEBUG - 2026-06-21 17:46:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:46:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:46:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:46:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:46:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:46:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:47:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:47:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:47:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:47:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:47:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:53:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:53:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:53:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:53:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:53:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:54:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:54:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:55:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:55:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:55:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:56:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 17:56:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:02:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:02:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:02:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:03:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:03:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:04:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 18:04:56 --> CSRF token verified.
+DEBUG - 2026-06-21 18:04:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:04:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:05:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:05:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:05:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:05:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:05:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:05:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:05:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:07:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:07:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:07:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:07:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 18:08:22 --> CSRF token verified.
+DEBUG - 2026-06-21 18:08:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:08:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:08:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:08:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:08:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:08:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:08:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:08:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 18:08:49 --> CSRF token verified.
+DEBUG - 2026-06-21 18:08:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:08:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 18:08:52 --> CSRF token verified.
+DEBUG - 2026-06-21 18:08:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:08:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:08:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:09:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:09:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:09:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:09:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:09:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:10:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:10:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:11:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:11:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:12:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:13:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:13:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:14:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:14:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:14:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:14:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:14:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:14:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:14:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:14:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:14:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:14:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:14:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:14:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:14:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:14:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:14:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:14:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:14:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:14:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:14:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:14:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:14:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:14:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:16:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:16:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:20:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 18:20:36 --> CSRF token verified.
+DEBUG - 2026-06-21 18:20:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:20:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:20:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:20:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:20:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:20:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:33:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:33:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:33:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:33:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:33:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:33:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:33:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:33:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:34:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:34:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:37:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:37:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:42:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:42:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:42:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:42:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:42:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:43:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:43:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:43:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:43:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:43:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:43:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:44:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:44:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 18:44:19 --> CSRF token verified.
+DEBUG - 2026-06-21 18:44:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:44:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:44:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:44:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:44:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:44:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:45:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:45:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:45:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 18:45:20 --> CSRF token verified.
+DEBUG - 2026-06-21 18:45:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:45:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:45:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:45:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:45:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:45:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:45:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:45:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:45:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:45:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 18:47:30 --> CSRF token verified.
+DEBUG - 2026-06-21 18:47:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:47:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:50:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:50:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:51:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:51:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:51:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:51:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:51:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:51:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 18:52:10 --> CSRF token verified.
+DEBUG - 2026-06-21 18:52:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:52:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:52:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:52:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 18:53:06 --> CSRF token verified.
+DEBUG - 2026-06-21 18:53:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:53:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:53:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:53:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 18:53:31 --> CSRF token verified.
+DEBUG - 2026-06-21 18:53:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:53:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:53:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:53:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:53:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 18:53:51 --> CSRF token verified.
+DEBUG - 2026-06-21 18:53:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:53:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:53:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:53:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:53:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 18:54:03 --> CSRF token verified.
+DEBUG - 2026-06-21 18:54:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:54:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:54:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:54:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:54:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:54:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:54:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:54:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 18:54:36 --> CSRF token verified.
+DEBUG - 2026-06-21 18:54:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:54:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:54:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:56:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:57:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:58:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:58:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:58:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:58:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:58:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:58:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:58:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:58:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:58:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:58:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:58:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:58:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:58:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:58:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:58:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:58:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:58:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:58:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:58:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:58:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:59:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:59:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:59:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:59:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 18:59:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

@@ -1,231 +1,199 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Aplikasi Kuliner</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    
-    <style>
-        body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
-
-        .navbar {
-            background: linear-gradient(90deg, #1a1a2e 0%, #16213e 100%) !important;
-            border-bottom: 3px solid #667eea;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
-
-        .navbar-brand {
-            font-weight: 700;
-            font-size: 1.5rem;
-            letter-spacing: 0.5px;
-        }
-
-        .welcome-card {
-            border: none;
-            border-radius: 16px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-            overflow: hidden;
-            background: white;
-        }
-
-        .welcome-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .welcome-header h3 {
-            font-weight: 700;
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .role-badge {
-            display: inline-block;
-            background: rgba(255,255,255,0.2);
-            color: white;
-            padding: 0.5rem 1.5rem;
-            border-radius: 20px;
-            font-weight: 500;
-            font-size: 0.9rem;
-        }
-
-        .menu-section {
-            padding: 2.5rem;
-        }
-
-        .menu-section h5 {
-            color: #1a1a2e;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-size: 0.85rem;
-            opacity: 0.7;
-        }
-
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
-        }
-
-        .menu-btn {
-            border: none;
-            border-radius: 12px;
-            padding: 1.2rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-            color: white;
-            font-size: 0.95rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        .menu-btn:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-            color: white;
-            text-decoration: none;
-        }
-
-        .menu-btn i {
-            font-size: 2rem;
-        }
-
-        .menu-btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-
-        .menu-btn-primary:hover {
-            background: linear-gradient(135deg, #5568d3 0%, #6a3f91 100%);
-        }
-
-        .menu-btn-secondary {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-        }
-
-        .menu-btn-secondary:hover {
-            background: linear-gradient(135deg, #e77fe0 0%, #f0355b 100%);
-        }
-
-        .menu-btn-info {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-        }
-
-        .menu-btn-info:hover {
-            background: linear-gradient(135deg, #3d9bde 0%, #00d9e9 100%);
-        }
-
-        .logout-section {
-            text-align: center;
-            padding: 1.5rem;
-            border-top: 1px solid #e0e0e0;
-        }
-
-        .logout-btn {
-            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
-            border: none;
-            padding: 0.7rem 2rem;
-            border-radius: 25px;
-            font-weight: 600;
-            color: white;
-        }
-
-        .logout-btn:hover {
-            background: linear-gradient(135deg, #ee5a5a 0%, #e34559 100%);
-            color: white;
-            text-decoration: none;
-        }
-    </style>
+    <meta name="description" content="Dashboard Kuliner — Kelola kuliner sekitar UDINUS Semarang">
+    <title><?= esc($title) ?> — Kuliner</title>
+    <link rel="stylesheet" href="<?= base_url('kuliner.css') ?>">
 </head>
 <body>
+    <div class="kl-layout">
+        <!-- Sidebar -->
+        <aside class="kl-sidebar">
+            <div class="kl-sidebar-header">
+                <a href="<?= base_url('dashboard') ?>" class="kl-logo" style="font-size: 1.35rem; text-decoration: none;">
+                    🍽️ <span>Kul</span>ine
+                </a>
+                <?php if (session()->get('role') === 'admin'): ?>
+                    <span class="kl-admin-badge" style="margin-left: 8px;">Admin</span>
+                <?php endif; ?>
+            </div>
 
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="<?= base_url('dashboard'); ?>">
-                <i class="bi bi-shop-window me-2"></i>Aplikasi Kuliner
-            </a>
-            <div class="ms-auto">
-                <span class="text-light me-3">
-                    <i class="bi bi-person-circle"></i> <?= session()->get('nama'); ?>
-                </span>
-                <a href="<?= base_url('logout'); ?>" class="logout-btn btn btn-sm">
-                    <i class="bi bi-box-arrow-right"></i> Logout
+            <div class="kl-sidebar-user">
+                <div class="kl-avatar" style="width: 40px; height: 40px; font-size: 16px;">
+                    <?= strtoupper(substr(session()->get('nama'), 0, 1)) ?>
+                </div>
+                <div class="kl-sidebar-user-info">
+                    <h4 style="font-size: 14px; font-weight: 600; color: var(--kl-dark); margin: 0 0 2px 0;">
+                        <?= esc(session()->get('nama')) ?>
+                    </h4>
+                    <span class="kl-badge kl-badge-kategori" style="font-size: 10px;">
+                        <?= ucfirst(session()->get('role')) ?>
+                    </span>
+                </div>
+            </div>
+
+            <nav class="kl-sidebar-nav">
+                <?php if (session()->get('role') === 'admin'): ?>
+                    <a href="<?= base_url('admin/dashboard') ?>" class="active">📊 Dashboard</a>
+                    <a href="<?= base_url('kuliner') ?>">🍽️ Kelola Kuliner</a>
+                    <a href="<?= base_url('kategori') ?>">🏷️ Kategori</a>
+                    <a href="<?= base_url('tag') ?>">🔖 Tag</a>
+                    <a href="<?= base_url('review') ?>">⭐ Kelola Ulasan</a>
+                <?php else: ?>
+                    <a href="<?= base_url('dashboard') ?>" class="active">🏠 Dashboard</a>
+                    <a href="<?= base_url('kuliner') ?>">🍽️ Kuliner Saya</a>
+                    <a href="<?= base_url('kuliner/create') ?>">➕ Tambah Kuliner</a>
+                    <a href="<?= base_url('review') ?>">⭐ Ulasan Saya</a>
+                <?php endif; ?>
+            </nav>
+
+            <!-- Logout moved to topbar -->
+        </aside>
+
+        <!-- Main Content -->
+        <main class="kl-main" style="background: var(--kl-bg); position: relative;">
+            <div class="kl-topbar-actions">
+                <a href="<?= base_url('logout') ?>" class="kl-logout-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                    <span>Logout</span>
                 </a>
             </div>
-        </div>
-    </nav>
+            <div class="kl-main-content">
 
-    <div class="container my-5">
-        <div class="row justify-content-center">
-            <div class="col-lg-6">
-                <div class="welcome-card">
-                    
-                    <div class="welcome-header">
-                        <h3><i class="bi bi-hand-thumbs-up me-2"></i>Selamat Datang!</h3>
-                        <p class="mb-0">Anda login sebagai</p>
-                        <div class="role-badge mt-2">
-                            <i class="bi bi-shield-check me-1"></i><?= ucfirst(session()->get('role')); ?>
+                <!-- Page Header -->
+                <div class="kl-page-header">
+                    <h1 style="font-size: 26px;">
+                        Halo, <?= esc(session()->get('nama')) ?>! 
+                    </h1>
+                    <p style="color: var(--kl-muted); font-size: 14px; margin-top: 4px;">
+                        <?= date('l, d F Y') ?> — Selamat datang di dashboard <?= ucfirst(session()->get('role')) ?>.
+                    </p>
+                </div>
+
+                <?php if (session()->get('role') === 'admin' && isset($totalKuliner)): ?>
+                    <!-- Admin Stats -->
+                    <div class="kl-stats-grid">
+                        <div class="kl-stat-card">
+                            <div class="kl-stat-icon" style="background: var(--kl-primary-light); color: var(--kl-primary);">🍽️</div>
+                            <div class="kl-stat-number"><?= $totalKuliner ?></div>
+                            <div class="kl-stat-label">Total Kuliner</div>
+                        </div>
+                        <div class="kl-stat-card" style="border-left: 3px solid var(--kl-warning);">
+                            <div class="kl-stat-icon" style="background: var(--kl-warning-light); color: var(--kl-warning);">⏳</div>
+                            <div class="kl-stat-number"><?= $pendingKuliner ?></div>
+                            <div class="kl-stat-label">Pending Review</div>
+                        </div>
+                        <div class="kl-stat-card">
+                            <div class="kl-stat-icon" style="background: var(--kl-info-light); color: var(--kl-info);">👥</div>
+                            <div class="kl-stat-number"><?= $userCount ?></div>
+                            <div class="kl-stat-label">Total User</div>
+                        </div>
+                        <div class="kl-stat-card">
+                            <div class="kl-stat-icon" style="background: #FEF3C7; color: #D97706;">⭐</div>
+                            <div class="kl-stat-number"><?= $reviewCount ?></div>
+                            <div class="kl-stat-label">Total Ulasan</div>
                         </div>
                     </div>
 
-                    <div class="menu-section">
-                        <p class="text-muted mb-3">
-                            Gunakan menu di bawah untuk mengelola data kuliner sesuai dengan hak akses Anda.
+                    <?php if (!empty($topRatedKuliner)): ?>
+                        <!-- Top Rated -->
+                        <div class="kl-card" style="padding: 20px; margin-bottom: 28px;">
+                            <div class="kl-flex-between">
+                                <div>
+                                    <div class="kl-label" style="color: var(--kl-muted); margin-bottom: 8px;">🏆 Kuliner Terpopuler</div>
+                                    <h3 style="font-size: 20px; margin-bottom: 4px;"><?= esc($topRatedKuliner['nama']) ?></h3>
+                                    <p class="kl-text-muted" style="font-size: 14px;">
+                                        Rata-rata ⭐ <?= number_format($topRatedKuliner['avg_rating'], 1) ?> dari <?= $topRatedKuliner['review_count'] ?> ulasan
+                                    </p>
+                                </div>
+                                <div style="font-size: 48px; opacity: 0.3;">🏆</div>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+
+                    <!-- Quick Actions Admin -->
+                    <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 16px; color: var(--kl-dark);">Menu Cepat</h3>
+                    <div class="kl-grid-3" style="margin-bottom: 28px;">
+                        <a href="<?= base_url('kuliner') ?>" class="kl-card kl-card-texture" style="padding: 24px; text-decoration: none; display: flex; align-items: center; gap: 16px;">
+                            <div style="font-size: 28px;">🍽️</div>
+                            <div>
+                                <h4 style="font-size: 15px; font-weight: 600; color: var(--kl-dark); margin-bottom: 2px;">Kelola Kuliner</h4>
+                                <p style="font-size: 13px; color: var(--kl-muted); margin: 0;">Lihat semua data kuliner</p>
+                            </div>
+                        </a>
+                        <a href="<?= base_url('kategori') ?>" class="kl-card kl-card-texture" style="padding: 24px; text-decoration: none; display: flex; align-items: center; gap: 16px;">
+                            <div style="font-size: 28px;">🏷️</div>
+                            <div>
+                                <h4 style="font-size: 15px; font-weight: 600; color: var(--kl-dark); margin-bottom: 2px;">Kelola Kategori</h4>
+                                <p style="font-size: 13px; color: var(--kl-muted); margin: 0;">Atur kategori kuliner</p>
+                            </div>
+                        </a>
+                        <a href="<?= base_url('tag') ?>" class="kl-card kl-card-texture" style="padding: 24px; text-decoration: none; display: flex; align-items: center; gap: 16px;">
+                            <div style="font-size: 28px;">🔖</div>
+                            <div>
+                                <h4 style="font-size: 15px; font-weight: 600; color: var(--kl-dark); margin-bottom: 2px;">Kelola Tag</h4>
+                                <p style="font-size: 13px; color: var(--kl-muted); margin: 0;">Atur tag & label</p>
+                            </div>
+                        </a>
+                        <a href="<?= base_url('review') ?>" class="kl-card kl-card-texture" style="padding: 24px; text-decoration: none; display: flex; align-items: center; gap: 16px;">
+                            <div style="font-size: 28px;">⭐</div>
+                            <div>
+                                <h4 style="font-size: 15px; font-weight: 600; color: var(--kl-dark); margin-bottom: 2px;">Moderasi Ulasan</h4>
+                                <p style="font-size: 13px; color: var(--kl-muted); margin: 0;">Kelola ulasan pengguna</p>
+                            </div>
+                        </a>
+                    </div>
+
+                <?php else: ?>
+                    <!-- Kontributor Dashboard -->
+                    <div class="kl-grid-2" style="margin-bottom: 28px;">
+                        <a href="<?= base_url('kuliner') ?>" class="kl-card kl-card-texture" style="padding: 32px; text-decoration: none; text-align: center; transition: all 0.3s ease;">
+                            <div style="font-size: 48px; margin-bottom: 12px;">🍽️</div>
+                            <h3 style="font-size: 18px; font-weight: 700; color: var(--kl-dark); margin-bottom: 6px;">Lihat Daftar Kuliner</h3>
+                            <p style="font-size: 14px; color: var(--kl-muted); margin: 0;">Jelajahi semua kuliner aktif & pantau pengajuan Anda</p>
+                        </a>
+                        <a href="<?= base_url('review') ?>" class="kl-card kl-card-texture" style="padding: 32px; text-decoration: none; text-align: center; transition: all 0.3s ease;">
+                            <div style="font-size: 48px; margin-bottom: 12px;">⭐</div>
+                            <h3 style="font-size: 18px; font-weight: 700; color: var(--kl-dark); margin-bottom: 6px;">Rating & Ulasan</h3>
+                            <p style="font-size: 14px; color: var(--kl-muted); margin: 0;">Tulis ulasan dan lihat review dari pengguna lain</p>
+                        </a>
+                    </div>
+
+                    <div class="kl-card" style="padding: 32px; text-align: center; background: var(--kl-gradient-hero);">
+                        <div style="font-size: 36px; margin-bottom: 12px;">➕</div>
+                        <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Tahu tempat makan enak?</h3>
+                        <p style="color: var(--kl-muted); font-size: 14px; margin-bottom: 16px;">
+                            Bantu teman-teman sekampus menemukan kuliner terbaik!
                         </p>
-
-                        <?php if (session()->get('role') == 'admin'): ?>
-                            
-                            <h5><i class="bi bi-sliders me-2"></i>Menu Admin</h5>
-                            <div class="menu-grid">
-                                <a href="<?= base_url('kuliner'); ?>" class="menu-btn menu-btn-primary">
-                                    <i class="bi bi-shop"></i>
-                                    <span>Kelola Kuliner</span>
-                                </a>
-                                <a href="#" class="menu-btn menu-btn-secondary">
-                                    <i class="bi bi-tag"></i>
-                                    <span>Kategori</span>
-                                </a>
-                                <a href="#" class="menu-btn menu-btn-info">
-                                    <i class="bi bi-check-circle"></i>
-                                    <span>Validasi</span>
-                                </a>
-                            </div>
-
-                        <?php else: ?>
-                            
-                            <h5><i class="bi bi-eye me-2"></i>Menu Kontributor</h5>
-                            <div class="menu-grid">
-                                <a href="<?= base_url('kuliner'); ?>" class="menu-btn menu-btn-primary">
-                                    <i class="bi bi-list-check"></i>
-                                    <span>Lihat Daftar</span>
-                                </a>
-                            </div>
-
-                        <?php endif; ?>
+                        <a href="<?= base_url('kuliner/create') ?>" class="kl-btn kl-btn-primary">
+                            Tambah Tempat Baru →
+                        </a>
                     </div>
+                <?php endif; ?>
 
-                    <div class="logout-section">
-                        <small class="text-muted">
-                            <i class="bi bi-info-circle"></i> Jika mengalami kendala, hubungi administrator sistem.
-                        </small>
-                    </div>
+                <!-- Info Footer -->
+                <div style="text-align: center; margin-top: 40px; padding: 20px; color: var(--kl-muted); font-size: 13px;">
+                    <p>Jika mengalami kendala, hubungi administrator sistem.</p>
                 </div>
             </div>
-        </div>
+        </main>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Avatar dropdown toggle
+        document.querySelectorAll('.kl-avatar-dropdown').forEach(el => {
+            el.querySelector('.kl-avatar')?.addEventListener('click', () => {
+                el.classList.toggle('open');
+            });
+        });
+        // Close dropdown on outside click
+        document.addEventListener('click', (e) => {
+            document.querySelectorAll('.kl-avatar-dropdown.open').forEach(el => {
+                if (!el.contains(e.target)) el.classList.remove('open');
+            });
+        });
+    </script>
 </body>
 </html>

@@ -25,7 +25,12 @@ class Filters extends BaseFilters
                     'login', 'login/*', 
                     'login-auth', 'login-auth/*',
                     'index.php/login', 'index.php/login-auth',
-                    '/', 'front/*'
+                    '/', 'front/*',
+                    'kuliner/detail/*', 'kuliner/*/reviews',
+                    'kuliner/cariKoordinat',
+                    'api/*',
+                    'index.php/kuliner/cariKoordinat',
+                    'index.php/api/*',
                 ]
             ],
         ],

@@ -26,10 +26,30 @@ class Login extends BaseController
         $session = session();
         $model = new UserModel(); 
         
+        $rules = [
+            'email' => 'required|valid_email',
+            'paswd' => 'required|min_length[7]',
+        ];
+
+        $messages = [
+            'email' => [
+                'required'    => 'Email harus diisi.',
+                'valid_email' => 'Masukkan alamat email yang valid.',
+            ],
+            'paswd' => [
+                'required'   => 'Password harus diisi.',
+                'min_length' => 'Password minimal 7 karakter.',
+            ],
+        ];
+
+        if (! $this->validate($rules, $messages)) {
+            $session->setFlashdata('msg', $this->validator->listErrors());
+            return redirect()->back()->withInput();
+        }
+
         $email = $this->request->getPost('email');
         $password = $this->request->getPost('paswd');
 
-       
         $user = $model->where('email', $email)->first();
 
         if ($user) {
