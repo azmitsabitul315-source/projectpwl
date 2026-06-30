@@ -22,8 +22,14 @@ $routes->get('kuliner/(:num)/reviews', 'Kuliner::reviews/$1');
 // Webservice Client: Cari koordinat via Nominatim
 $routes->get('kuliner/cariKoordinat', 'Kuliner::cariKoordinat');
 
-// Webservice Server: API Kuliner Radius
-$routes->get('api/kuliner', 'Api\KulinerController::index');
+// Webservice Server: API Kuliner RESTful
+$routes->group('api', ['namespace' => 'App\Controllers\Api', 'filter' => 'apikey'], function ($routes) {
+    $routes->get('kuliner', 'KulinerController::index');
+    $routes->get('kuliner/(:num)', 'KulinerController::show/$1');
+    $routes->post('kuliner', 'KulinerController::create');
+    $routes->put('kuliner/(:num)', 'KulinerController::update/$1');
+    $routes->delete('kuliner/(:num)', 'KulinerController::delete/$1');
+});
 
 
 $routes->group('', ['filter' => 'auth'], function ($routes) {

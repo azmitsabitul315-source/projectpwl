@@ -13,13 +13,14 @@ class Filters extends BaseFilters
         'csrf'    => CSRF::class,
         'toolbar' => DebugToolbar::class,
         'auth'    => \App\Filters\Auth::class, 
+        'apikey'  => \App\Filters\ApiKeyFilter::class,
     ];
 
     public array $required = [];
 
     public array $globals = [
         'before' => [
-            'csrf', 
+            'csrf' => ['except' => ['api/*']], 
             'auth' => [
                 'except' => [
                     'login', 'login/*', 

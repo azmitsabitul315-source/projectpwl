@@ -8,96 +8,126 @@ use App\Models\KulinerModel;
 class KulinerController extends BaseController
 {
     protected $model;
-    private $token;
 
-    // ══════════════════════════════════════════
-    // CONSTRUCTOR — sama seperti materi dosen
-    // ══════════════════════════════════════════
-    function __construct()
+    // Daftar field yang diizinkan untuk insert/update
+    protected array $allowedFields = [
+        'user_id', 'id_kategori', 'nama', 'alamat',
+        'deskripsi', 'gambar', 'foto2', 'foto3', 'lat', 'lng', 'status'
+    ];
+
+    public function __construct()
     {
         $this->model = new KulinerModel();
-        $this->token = env('MY_API_KEY');
     }
 
-    // ══════════════════════════════════════════
-    // CEK API KEY — copy dari materi dosen
-    // ══════════════════════════════════════════
-    private function authenticate()
-    {
-        $header = $this->request->getHeaderLine('Authorization');
-
-        if (empty($header)) {
-            return false;
-        }
-
-        if (!preg_match('/Bearer\s+(.*)$/i', $header, $matches)) {
-            return false;
-        }
-
-        return $matches[1] === $this->token;
-    }
-
-    private function unauthorized()
-    {
-        return $this->response
-                    ->setStatusCode(401)
-                    ->setJSON([
-                        'status'  => false,
-                        'message' => 'Unauthorized'
-        ]);
-    }
-
-    // ══════════════════════════════════════════
-    // INDEX — endpoint utama dengan filter radius
-    // ══════════════════════════════════════════
+    // GET /api/kuliner (daftar query: page, per_page, dan filter lat, lng, radius untuk pencarian radius)
+    // Mendukung filter radius jika param lat,lng,radius diberikan
     public function index()
     {
-        // Cek API Key dulu
-        if (! $this->authenticate()) {
-            return $this->unauthorized();
-        }
+        $lat    = $this->request->getVar('lat');
+        $lng    = $this->request->getVar('lng');
+        $radius = $this->request->getVar('radius'); // km
 
-        // Ambil parameter dari URL
-        $lat    = $this->request->getGet('lat');
-        $lng    = $this->request->getGet('lng');
-        $radius = $this->request->getGet('radius'); // dalam km
+        $page    = (int) ($this->request->getVar('page') ?? 1);
+        $perPage = (int) ($this->request->getVar('per_page') ?? 10);
 
-        // Pagination (sama seperti materi dosen)
-        $page    = (int) ($this->request->getGet('page') ?? 1);
-        $perPage = (int) ($this->request->getGet('per_page') ?? 10);
-
-        // Query database
         $query = $this->model->where('status', 'active');
 
         if ($lat && $lng && $radius) {
-            // Rumus Haversine: menghitung jarak antar 2 titik di permukaan bumi
-            $query->select('kuliner.*, ( 6371 * acos( cos( radians('.$lat.') ) * cos( radians( lat ) ) * cos( radians( lng ) - radians('.$lng.') ) + sin( radians('.$lat.') ) * sin( radians( lat ) ) ) ) AS distance');
+            // Haversine formula
+            $query->select('kuliner.*, ( 6371 * acos( cos( radians(' . $lat . ') ) * cos( radians( lat ) ) * cos( radians( lng ) - radians(' . $lng . ') ) + sin( radians(' . $lat . ') ) * sin( radians( lat ) ) ) ) AS distance');
             $query->having('distance <=', $radius);
             $query->orderBy('distance', 'ASC');
         } else {
             $query->orderBy('created_at', 'DESC');
         }
 
-        // Pagination
-        $kuliners = $query->paginate($perPage, 'default', $page);
+        $data = $query->paginate($perPage, 'default', $page);
         $pager = $this->model->pager;
 
-        // Response JSON dengan pagination (sama seperti materi dosen)
         return $this->response->setJSON([
             'status' => true,
-            'filter' => [
-                'lat'    => $lat,
-                'lng'    => $lng,
-                'radius' => $radius
-            ],
-            'data'   => $kuliners,
+            'filter' => [ 'lat' => $lat, 'lng' => $lng, 'radius' => $radius ],
+            'data' => $data,
             'pagination' => [
                 'current_page' => $page,
                 'per_page'     => $perPage,
-                'total_data'   => $pager->getTotal(),
-                'has_next'     => $page < $pager->getPageCount(),
-                'has_prev'     => $page > 1,
-            ]
+                'total'        => $pager ? $pager->getTotal() : count($data),
+            ],
         ]);
+    }
+
+    // GET /api/kuliner/{id} (detail satu kuliner)
+    public function show($id = null)
+    {
+        $row = $this->model->find($id);
+        if (! $row) {
+            return $this->response->setStatusCode(404)->setJSON(['status' => false, 'message' => 'Not found']);
+        }
+
+        return $this->response->setJSON(['status' => true, 'data' => $row]);
+    }
+
+    // POST /api/kuliner (tambah data JSON atau form)
+    public function create()
+    {
+        $input = $this->request->getJSON(true) ?? $this->request->getPost();
+        if (! $input) {
+            return $this->response->setStatusCode(400)->setJSON(['status' => false, 'message' => 'No input provided']);
+        }
+
+        $filtered = array_intersect_key($input, array_flip($this->allowedFields));
+
+        $id = $this->model->insert($filtered);
+        if ($id === false) {
+            return $this->response->setStatusCode(500)->setJSON(['status' => false, 'message' => 'Insert failed']);
+        }
+
+        return $this->response->setStatusCode(201)->setJSON(['status' => true, 'id' => $id]);
+    }
+
+    // PUT /api/kuliner/{id} (update data)
+    public function update($id = null)
+    {
+        if (! $id) {
+            return $this->response->setStatusCode(400)->setJSON(['status' => false, 'message' => 'ID required']);
+        }
+
+        $raw = $this->request->getRawInput();
+        $input = $this->request->getJSON(true) ?? $raw;
+
+        if (! $input) {
+            return $this->response->setStatusCode(400)->setJSON(['status' => false, 'message' => 'No input provided']);
+        }
+
+        $row = $this->model->find($id);
+        if (! $row) {
+            return $this->response->setStatusCode(404)->setJSON(['status' => false, 'message' => 'Not found']);
+        }
+
+        $filtered = array_intersect_key($input, array_flip($this->allowedFields));
+        $ok = $this->model->update($id, $filtered);
+
+        if ($ok === false) {
+            return $this->response->setStatusCode(500)->setJSON(['status' => false, 'message' => 'Update failed']);
+        }
+
+        return $this->response->setJSON(['status' => true]);
+    }
+
+    // DELETE /api/kuliner/{id} (hapus data)
+    public function delete($id = null)
+    {
+        if (! $id) {
+            return $this->response->setStatusCode(400)->setJSON(['status' => false, 'message' => 'ID required']);
+        }
+
+        $row = $this->model->find($id);
+        if (! $row) {
+            return $this->response->setStatusCode(404)->setJSON(['status' => false, 'message' => 'Not found']);
+        }
+
+        $this->model->delete($id);
+        return $this->response->setJSON(['status' => true]);
     }
 }
