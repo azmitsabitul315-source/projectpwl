@@ -1,69 +1,125 @@
-# CodeIgniter 4 Application Starter
+# Proyek Aplikasi Kuliner
 
-## What is CodeIgniter?
+![PHP Version](https://img.shields.io/badge/PHP-8.2%2B-blue)
+![CodeIgniter](https://img.shields.io/badge/CodeIgniter-4.x-EE4323?logo=codeigniter)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+Aplikasi web berbasis CodeIgniter 4 untuk pengelolaan data kuliner dan fitur donasi.
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+## Fitur Utama
+- **Manajemen Data Kuliner**: CRUD (Create, Read, Update, Delete) informasi tempat dan menu kuliner.
+- **Sistem Donasi (Payment Gateway)**: Integrasi dengan API Midtrans untuk memudahkan proses pembayaran dan donasi.
+- **Manajemen Kategori & Tag**: Pengelompokan kuliner berdasarkan kategori dan tag yang relevan.
+- **Manajemen Role User**: Akses terpisah antara Admin (pengelola penuh) dan Kontributor/User (donatur & reviewer).
+- **Review & Rating**: Pengguna dapat memberikan ulasan atau komentar pada tempat kuliner.
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+## Teknologi yang Digunakan
+- **Backend**: PHP 8.2, Framework CodeIgniter 4
+- **Database**: MySQL
+- **Payment Gateway**: Midtrans (Payment Gateway Indonesia)
+- **Frontend**: HTML, CSS, JavaScript (Bootstrap/Tailwind)
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+## Persyaratan Sistem
+- PHP 8.2 atau lebih baru
+- MySQL
+- Composer
 
-## Installation & updates
+## Cara Instalasi
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+1. **Clone repository ini**
+   ```bash
+   git clone <URL_REPOSITORY_ANDA>
+   cd projectpwl22
+   ```
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+2. **Install dependensi menggunakan Composer**
+   ```bash
+   composer install
+   ```
 
-## Setup
+3. **Konfigurasi Environment (.env)**
+   - Copy file `.env.example` dan ubah namanya menjadi `.env`
+   - Buka file `.env` dan sesuaikan konfigurasi database, API Key, Midtrans, dan SMTP Email Anda. (Lihat panduan di bawah).
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+4. **Jalankan Migrasi dan Seeder**
+   Pastikan Anda sudah membuat database di MySQL (misal: `db_kuliner`), lalu jalankan perintah ini untuk membuat tabel dan mengisi data awal:
+   ```bash
+   php spark migrate --seed
+   ```
 
-## Important Change with index.php
+5. **Jalankan Server Lokal**
+   ```bash
+   php spark serve
+   ```
+   Aplikasi dapat diakses di `http://localhost:8080`
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+## Konfigurasi .env
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+Pastikan Anda mengubah beberapa baris berikut di file `.env` Anda:
 
-**Please** read the user guide for a better explanation of how CI4 works!
+```env
+# URL Base
+app.baseURL = 'http://localhost:8080/'
 
-## Repository Management
+# Konfigurasi Database
+database.default.hostname = localhost
+database.default.database = db_kuliner
+database.default.username = root
+database.default.password = 
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+# Kunci API untuk webservice
+MY_API_KEY = my-secret-token
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+# Kunci Midtrans untuk fitur donasi
+MIDTRANS_SERVER_KEY=Kunci-Server-Anda
+MIDTRANS_CLIENT_KEY=Kunci-Client-Anda
 
-## Server Requirements
+# Konfigurasi SMTP Email
+SMTP_HOST=smtp.gmail.com
+SMTP_USER=email-anda@gmail.com
+SMTP_PASS=password-aplikasi-email-anda
+SMTP_PORT=465
+```
+> **Penting**: File `.env` sudah dimasukkan ke `.gitignore` sehingga data rahasia Anda tidak akan ter-push ke GitHub.
 
-PHP version 8.2 or higher is required, with the following extensions installed:
+## Cara Penggunaan
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+1. **Akses Aplikasi**: Buka `http://localhost:8080` di browser Anda.
+2. **Sebagai Admin**: Login menggunakan akun admin untuk mengakses Dashboard Admin, menambah, mengubah, atau menghapus data kuliner, kategori, dan tag.
+3. **Sebagai User/Kontributor**: Login untuk melihat daftar kuliner, memberikan review, atau melakukan pembayaran donasi untuk campaign tertentu via Midtrans.
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - The end of life date for PHP 8.1 was December 31, 2025.
-> - If you are still using below PHP 8.2, you should upgrade immediately.
-> - The end of life date for PHP 8.2 will be December 31, 2026.
+## Akun Demo
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+Gunakan akun berikut untuk mencoba masuk ke dalam sistem:
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+**Akun Admin**
+- Email: `admin@kuliner.com`
+- Password: `admin123`
+- Role: `admin`
+
+**Akun Kontributor / User**
+- Email: `kontributor@kuliner.com`
+- Password: `kontributor123`
+- Role: `kontributor`
+
+## Screenshot Fitur Utama
+
+*(Tambahkan gambar screenshot aplikasi Anda di sini sebelum mengunggah ke GitHub)*
+
+### 1. Halaman Utama / Daftar Kuliner
+![Halaman Daftar Kuliner](docs/screenshot/home.png)
+
+### 2. Fitur Donasi
+![Halaman Fitur Donasi](docs/screenshot/donasi.png)
+
+### 3. Dashboard Admin
+![Halaman Dashboard Admin](docs/screenshot/admin.png)
+
+## Lisensi
+
+Proyek ini dilisensikan di bawah [MIT License](LICENSE). Silakan lihat file `LICENSE` untuk informasi lebih lanjut.
+
+## Kontak
+
+Dibuat oleh **[Nama Anda]** - [Email Anda]  
+Link Repositori: [https://github.com/username/projectpwl22](https://github.com/username/projectpwl22)

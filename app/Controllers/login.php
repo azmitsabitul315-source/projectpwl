@@ -11,7 +11,11 @@ class Login extends BaseController
         helper('form');
 
         if (session()->get('logged_in')) {
-            return redirect()->to('/');
+            if (session()->get('role') == 'admin') {
+                return redirect()->to('/admin/dashboard');
+            } else {
+                return redirect()->to('/dashboard');
+            }
         }
 
         $data = [

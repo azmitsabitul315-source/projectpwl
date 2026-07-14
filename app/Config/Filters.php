@@ -20,7 +20,7 @@ class Filters extends BaseFilters
 
     public array $globals = [
         'before' => [
-            'csrf' => ['except' => ['api/*']], 
+            'csrf' => ['except' => ['api/*', 'donasi/webhook', 'donasi/pay', 'donasi/finish']], 
             'auth' => [
                 'except' => [
                     'login', 'login/*', 
@@ -32,6 +32,7 @@ class Filters extends BaseFilters
                     'api/*',
                     'index.php/kuliner/cariKoordinat',
                     'index.php/api/*',
+                    'donasi', 'donasi/*', 'index.php/donasi', 'index.php/donasi/*'
                 ]
             ],
         ],

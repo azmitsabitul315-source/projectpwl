@@ -16,3 +16,10 @@ application/logs/*
 !application/logs/index.html
 !application/logs/.htaccess
 /vendor/
+
+.env
+writable/session/*
+writable/logs/*
+writable/debugbar/*
+public/uploads/kuliner/*
+!public/uploads/kuliner/index.html

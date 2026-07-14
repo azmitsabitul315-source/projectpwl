@@ -13,7 +13,7 @@
         <aside class="kl-sidebar">
             <div class="kl-sidebar-header">
                 <a href="<?= base_url('dashboard') ?>" class="kl-logo" style="font-size: 1.35rem; text-decoration: none;">
-                    🍽️ <span>Kul</span>ine
+                     <span>Kul</span>inerr
                 </a>
                 <?php if (session()->get('role') === 'admin'): ?>
                     <span class="kl-admin-badge" style="margin-left: 8px;">Admin</span>
@@ -30,16 +30,16 @@
             </div>
             <nav class="kl-sidebar-nav">
                 <?php if (session()->get('role') === 'admin'): ?>
-                    <a href="<?= base_url('admin/dashboard') ?>">📊 Dashboard</a>
-                    <a href="<?= base_url('kuliner') ?>">🍽️ Kelola Kuliner</a>
-                    <a href="<?= base_url('kategori') ?>">🏷️ Kategori</a>
-                    <a href="<?= base_url('tag') ?>">🔖 Tag</a>
-                    <a href="<?= base_url('review') ?>" class="active">⭐ Kelola Ulasan</a>
+                    <a href="<?= base_url('admin/dashboard') ?>"> Dashboard</a>
+                    <a href="<?= base_url('kuliner') ?>"> Kelola Kuliner</a>
+                    <a href="<?= base_url('kategori') ?>"> Kategori</a>
+                    <a href="<?= base_url('tag') ?>"> Tag</a>
+                    <a href="<?= base_url('review') ?>" class="active"> Kelola Ulasan</a>
                 <?php else: ?>
-                    <a href="<?= base_url('dashboard') ?>">🏠 Dashboard</a>
-                    <a href="<?= base_url('kuliner') ?>">🍽️ Kuliner Saya</a>
-                    <a href="<?= base_url('kuliner/create') ?>">➕ Tambah Kuliner</a>
-                    <a href="<?= base_url('review') ?>" class="active">⭐ Ulasan Saya</a>
+                    <a href="<?= base_url('dashboard') ?>"> Dashboard</a>
+                    <a href="<?= base_url('kuliner') ?>"> Kuliner Saya</a>
+                    <a href="<?= base_url('kuliner/create') ?>">+ Tambah Kuliner</a>
+                    <a href="<?= base_url('review') ?>" class="active"> Ulasan Saya</a>
                 <?php endif; ?>
             </nav>
             <!-- Logout moved to topbar -->

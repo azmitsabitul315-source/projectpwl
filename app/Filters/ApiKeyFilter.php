@@ -13,12 +13,12 @@ class ApiKeyFilter implements FilterInterface
     {
         $config = new ApiConfig();
 
-        // Optionally require HTTPS
+        // secara opsional mewajibkan HTTPS
         if ($config->requireHttps && ! $request->isSecure()) {
             return service('response')->setStatusCode(403)->setJSON(['status' => false, 'message' => 'HTTPS required']);
         }
 
-        // Accept either Authorization: Bearer <key> or X-API-KEY header
+        // memeriksa header Autorization: Barer <key> atau X-API-KEY
         $authHeader = $request->getHeaderLine('Authorization');
         $apiKeyHeader = $request->getHeaderLine('X-API-KEY');
 
@@ -33,16 +33,16 @@ class ApiKeyFilter implements FilterInterface
             return service('response')->setStatusCode(401)->setJSON(['status' => false, 'message' => 'API key required']);
         }
 
-        // Check against configured keys
+        // Periksa terhadap kunci yang dikonfigurasi
         if (! in_array($key, $config->keys, true)) {
             return service('response')->setStatusCode(403)->setJSON(['status' => false, 'message' => 'Invalid API key']);
         }
 
-        // Passed
+        
     }
 
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
-        // nothing to do
+        
     }
 }

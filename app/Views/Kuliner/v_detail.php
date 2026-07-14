@@ -72,7 +72,7 @@
             <!-- Top Navbar -->
             <div style="background: var(--kl-surface); border-bottom: 1px solid var(--kl-border); padding: 16px 32px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100;">
                 <a href="<?= base_url() ?>" class="kl-logo" style="font-size: 1.35rem; text-decoration: none;">
-                    🍽️ <span>Kul</span>ine
+                     <span>Kul</span>inerr
                 </a>
                 <div>
                     <?php if (session()->get('logged_in')): ?>
@@ -90,7 +90,7 @@
             <div class="kl-main-content" style="max-width: 1200px; margin: 0 auto; padding: 32px;">
                 <!-- Breadcrumb -->
                 <div class="kl-breadcrumb">
-                    <a href="<?= base_url('dashboard') ?>">Beranda</a>
+                    <a href="<?= session()->get('logged_in') ? base_url('dashboard') : base_url() ?>">Beranda</a>
                     <span class="kl-breadcrumb-sep">›</span>
                     <a href="<?= base_url('kuliner') ?>">Jelajahi Kuliner</a>
                     <span class="kl-breadcrumb-sep">›</span>

@@ -38,6 +38,7 @@ class Kuliner extends BaseController
     {
         $role = session()->get('role');
         $userId = session()->get('userid');
+        $isLoggedIn = session()->get('logged_in');
 
         if ($role === 'admin') {
             $kuliner = $this->buildKulinerMetaQuery()->get()->getResultArray();
@@ -54,16 +55,20 @@ class Kuliner extends BaseController
             ->get()
             ->getResultArray();
 
-        $mySubmissions = $this->buildKulinerMetaQuery()
-            ->where('kuliner.user_id', $userId)
-            ->whereIn('kuliner.status', ['pending', 'rejected'])
-            ->get()
-            ->getResultArray();
+        $mySubmissions = [];
+        if ($isLoggedIn) {
+            $mySubmissions = $this->buildKulinerMetaQuery()
+                ->where('kuliner.user_id', $userId)
+                ->whereIn('kuliner.status', ['pending', 'rejected'])
+                ->get()
+                ->getResultArray();
+        }
 
         $data = [
             'title'           => 'Daftar Kuliner',
             'activeKuliner'   => $activeKuliner,
             'mySubmissions'   => $mySubmissions,
+            'isLoggedIn'      => $isLoggedIn
         ];
 
         return view('kuliner/v_index_user', $data);
@@ -275,14 +280,14 @@ class Kuliner extends BaseController
     {
         $this->kulinerModel->update($id, ['status' => 'active']);
         session()->setFlashdata('success', 'Data kuliner berhasil di-approve!');
-        return redirect()->back();
+        return redirect()->to('/kuliner');
     }
 
     public function reject($id)
     {
         $this->kulinerModel->update($id, ['status' => 'rejected']);
         session()->setFlashdata('success', 'Data kuliner berhasil di-reject!');
-        return redirect()->back();
+        return redirect()->to('/kuliner');
     }
 
     // --- Public Views Added for Detail UI ---
@@ -310,9 +315,8 @@ class Kuliner extends BaseController
         return view("kuliner/v_detail", $data);
     }
 
-    // ══════════════════════════════════════════
-    // WEBSERVICE CLIENT: Cari Koordinat via Nominatim API
-    // ══════════════════════════════════════════
+  
+    // WEBSERVICE CLIENT: 
     public function cariKoordinat()
     {
         $alamat = $this->request->getGet('alamat');

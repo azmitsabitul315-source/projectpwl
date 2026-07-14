@@ -13,7 +13,7 @@
         <aside class="kl-sidebar">
             <div class="kl-sidebar-header">
                 <a href="<?= base_url('dashboard') ?>" class="kl-logo" style="font-size: 1.35rem; text-decoration: none;">
-                    🍽️ <span>Kul</span>ine
+                     <span>Kul</span>inerr
                 </a>
                 <?php if (session()->get('role') === 'admin'): ?>
                     <span class="kl-admin-badge" style="margin-left: 8px;">Admin</span>
@@ -36,16 +36,18 @@
 
             <nav class="kl-sidebar-nav">
                 <?php if (session()->get('role') === 'admin'): ?>
-                    <a href="<?= base_url('admin/dashboard') ?>" class="active">📊 Dashboard</a>
-                    <a href="<?= base_url('kuliner') ?>">🍽️ Kelola Kuliner</a>
-                    <a href="<?= base_url('kategori') ?>">🏷️ Kategori</a>
-                    <a href="<?= base_url('tag') ?>">🔖 Tag</a>
-                    <a href="<?= base_url('review') ?>">⭐ Kelola Ulasan</a>
+                    <a href="<?= base_url('admin/dashboard') ?>" class="active"> Dashboard</a>
+                    <a href="<?= base_url('kuliner') ?>"> Kelola Kuliner</a>
+                    <a href="<?= base_url('kategori') ?>"> Kategori</a>
+                    <a href="<?= base_url('tag') ?>"> Tag</a>
+                    <a href="<?= base_url('review') ?>"> Kelola Ulasan</a>
+                    <a href="<?= base_url('admin/donasi') ?>">$ Laporan Donasi $</a>
                 <?php else: ?>
-                    <a href="<?= base_url('dashboard') ?>" class="active">🏠 Dashboard</a>
-                    <a href="<?= base_url('kuliner') ?>">🍽️ Kuliner Saya</a>
-                    <a href="<?= base_url('kuliner/create') ?>">➕ Tambah Kuliner</a>
-                    <a href="<?= base_url('review') ?>">⭐ Ulasan Saya</a>
+                    <a href="<?= base_url('dashboard') ?>" class="active"> Dashboard</a>
+                    <a href="<?= base_url('kuliner') ?>"> Kuliner Saya</a>
+                    <a href="<?= base_url('kuliner/create') ?>">+ Tambah Kuliner</a>
+                    <a href="<?= base_url('review') ?>"> Ulasan Saya</a>
+                    <a href="<?= base_url('donasi') ?>">:) Dukung Kami</a>
                 <?php endif; ?>
             </nav>
 

@@ -13,7 +13,7 @@
         <aside class="kl-sidebar">
             <div class="kl-sidebar-header">
                 <a href="<?= base_url('dashboard') ?>" class="kl-logo" style="font-size: 1.35rem; text-decoration: none;">
-                    🍽️ <span>Kul</span>ine
+                     <span>Kul</span>inerr
                 </a>
                 <?php if (session()->get('role') === 'admin'): ?>
                     <span class="kl-admin-badge" style="margin-left: 8px;">Admin</span>
@@ -30,16 +30,16 @@
             </div>
             <nav class="kl-sidebar-nav">
                 <?php if (session()->get('role') === 'admin'): ?>
-                    <a href="<?= base_url('admin/dashboard') ?>">📊 Dashboard</a>
-                    <a href="<?= base_url('kuliner') ?>">🍽️ Kelola Kuliner</a>
-                    <a href="<?= base_url('kategori') ?>">🏷️ Kategori</a>
-                    <a href="<?= base_url('tag') ?>">🔖 Tag</a>
-                    <a href="<?= base_url('review') ?>">⭐ Kelola Ulasan</a>
+                    <a href="<?= base_url('admin/dashboard') ?>"> Dashboard</a>
+                    <a href="<?= base_url('kuliner') ?>"> Kelola Kuliner</a>
+                    <a href="<?= base_url('kategori') ?>"> Kategori</a>
+                    <a href="<?= base_url('tag') ?>"> Tag</a>
+                    <a href="<?= base_url('review') ?>"> Kelola Ulasan</a>
                 <?php else: ?>
-                    <a href="<?= base_url('dashboard') ?>">🏠 Dashboard</a>
-                    <a href="<?= base_url('kuliner') ?>">🍽️ Kuliner Saya</a>
-                    <a href="<?= base_url('kuliner/create') ?>" class="active">➕ Tambah Kuliner</a>
-                    <a href="<?= base_url('review') ?>">⭐ Ulasan Saya</a>
+                    <a href="<?= base_url('dashboard') ?>"> Dashboard</a>
+                    <a href="<?= base_url('kuliner') ?>"> Kuliner Saya</a>
+                    <a href="<?= base_url('kuliner/create') ?>" class="active">+ Tambah Kuliner</a>
+                    <a href="<?= base_url('review') ?>"> Ulasan Saya</a>
                 <?php endif; ?>
             </nav>
             <!-- Logout moved to topbar -->
@@ -177,7 +177,7 @@
                     <!-- Section: Tag -->
                     <div class="kl-card" style="margin-bottom: 24px;">
                         <div style="padding: 20px 24px; border-bottom: 1px solid var(--kl-border);">
-                            <h3 style="font-size: 16px; font-weight: 600;">🔖 Tag</h3>
+                            <h3 style="font-size: 16px; font-weight: 600;"> Tag</h3>
                         </div>
                         <div class="kl-card-body" style="padding: 24px;">
                             <?php if (!empty($tags)): ?>
@@ -206,7 +206,7 @@
                     </div>
 
                     <p class="kl-text-center kl-text-muted" style="font-size: 13px;">
-                        ⏳ Pengajuan Anda akan ditinjau admin sebelum ditampilkan publik
+                         Pengajuan Anda akan ditinjau admin sebelum ditampilkan publik
                     </p>
                 </form>
             </div>
@@ -229,9 +229,8 @@
             }
         }
 
-        // ══════════════════════════════════════════
-        // WEBSERVICE CLIENT: AJAX ke Nominatim via Controller
-        // ══════════════════════════════════════════
+        
+        // WEBSERVICE CLIENT 
         function cariKoordinat(btn) {
             console.log("Mencari koordinat...");
             // 1. Ambil teks alamat yang diketik user
@@ -253,12 +252,12 @@
             statusEl.style.color = 'var(--kl-muted)';
             statusEl.innerHTML = 'Menghubungi Nominatim API...';
 
-            // 2. Kirim ke controller kita via AJAX (fetch)
+            // 2.ke controller kita via AJAX (fetch)
             fetch('<?= base_url("kuliner/cariKoordinat") ?>?alamat=' + encodeURIComponent(alamat))
                 .then(res => res.json())
                 .then(data => {
                     if (data.length > 0) {
-                        // 3. Isi input lat & lng dengan hasil dari Nominatim
+                     
                         document.getElementById('lat').value = data[0].lat;
                         document.getElementById('lng').value = data[0].lon;
                         statusEl.style.backgroundColor = '#ecfdf5';

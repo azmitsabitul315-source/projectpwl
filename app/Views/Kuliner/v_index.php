@@ -13,7 +13,7 @@
         <aside class="kl-sidebar">
             <div class="kl-sidebar-header">
                 <a href="<?= base_url('admin/dashboard') ?>" class="kl-logo" style="font-size: 1.35rem; text-decoration: none;">
-                    🍽️ <span>Kul</span>ine
+                     <span>Kul</span>inerr
                 </a>
                 <span class="kl-admin-badge" style="margin-left: 8px;">Admin</span>
             </div>
@@ -27,11 +27,12 @@
                 </div>
             </div>
             <nav class="kl-sidebar-nav">
-                <a href="<?= base_url('admin/dashboard') ?>">📊 Dashboard</a>
-                <a href="<?= base_url('kuliner') ?>" class="active">🍽️ Kelola Kuliner</a>
-                <a href="<?= base_url('kategori') ?>">🏷️ Kategori</a>
-                <a href="<?= base_url('tag') ?>">🔖 Tag</a>
-                <a href="<?= base_url('review') ?>">⭐ Kelola Ulasan</a>
+                <a href="<?= base_url('admin/dashboard') ?>"> Dashboard</a>
+                <a href="<?= base_url('kuliner') ?>" class="active"> Kelola Kuliner</a>
+                <a href="<?= base_url('kategori') ?>"> Kategori</a>
+                <a href="<?= base_url('tag') ?>"> Tag</a>
+                <a href="<?= base_url('review') ?>"> Kelola Ulasan</a>
+                <a href="<?= base_url('admin/donasi') ?>"> Laporan Donasi</a>
             </nav>
         </aside>
 
@@ -71,78 +72,85 @@
                     </div>
                 <?php endif; ?>
 
-                <!-- Filter Tabs -->
-                <div class="kl-flex-between kl-mb-md" style="flex-wrap: wrap; gap: 12px; margin-bottom: 24px;">
-                    <div class="kl-filter-tabs" id="filter-tabs">
-                        <button class="kl-filter-tab active" data-filter="all">Semua</button>
-                        <button class="kl-filter-tab" data-filter="active">Aktif</button>
-                        <button class="kl-filter-tab" data-filter="pending">Menunggu</button>
-                        <button class="kl-filter-tab" data-filter="rejected">Ditolak</button>
-                    </div>
-                    <div style="display: flex; gap: 8px;">
-                        <input type="text" class="kl-input" placeholder="🔍 Cari nama kuliner..." style="width: 260px; padding: 8px 14px; font-size: 13px;" id="search-input">
-                    </div>
+                <!-- Data Segregation -->
+                <?php 
+                    $pending = array_filter($kuliner, fn($k) => $k['status'] === 'pending');
+                    $active = array_filter($kuliner, fn($k) => $k['status'] === 'active');
+                    $rejected = array_filter($kuliner, fn($k) => $k['status'] === 'rejected');
+                    
+                    $sections = [
+                        ['title' => '⏳ Pengajuan Menunggu Persetujuan', 'color' => 'var(--kl-primary)', 'data' => $pending, 'show_empty' => false],
+                        ['title' => '✅ Daftar Kuliner Aktif', 'color' => 'var(--kl-dark)', 'data' => $active, 'show_empty' => true],
+                        ['title' => '❌ Riwayat Ditolak', 'color' => 'var(--kl-danger)', 'data' => $rejected, 'show_empty' => false],
+                    ];
+                ?>
+
+                <!-- Search Only -->
+                <div class="kl-flex-between kl-mb-md" style="margin-bottom: 24px; justify-content: flex-end;">
+                    <input type="text" class="kl-input" placeholder="🔍 Cari nama kuliner..." style="width: 260px; padding: 8px 14px; font-size: 13px;" id="search-input">
                 </div>
 
-                <!-- Cards Grid -->
-                <div class="kuliner-grid" id="kuliner-grid">
-                    <?php if (!empty($kuliner)): ?>
-                        <?php foreach ($kuliner as $k): 
-                            $userName = $k['user_name'] ?? 'User';
-                            $userInitial = strtoupper(substr($userName, 0, 1));
-                        ?>
-                        <div class="card-kuliner status-<?= esc($k['status']) ?>" data-status="<?= esc($k['status']) ?>" data-name="<?= strtolower(esc($k['nama'])) ?>">
-                            <!-- Header Strip -->
-                            <div class="card-header-strip">
-                                <div class="card-header-user">
-                                    <div class="card-header-avatar"><?= $userInitial ?></div>
-                                    <div class="card-header-name" title="<?= esc($userName) ?>"><?= esc($userName) ?></div>
+                <?php foreach($sections as $sec): ?>
+                    <?php if(!empty($sec['data']) || $sec['show_empty']): ?>
+                        <div style="margin-bottom: 40px;">
+                            <h2 style="font-size: 1.15rem; font-weight: 600; color: <?= $sec['color'] ?>; border-bottom: 2px solid var(--kl-border); padding-bottom: 8px; margin-bottom: 16px;"><?= $sec['title'] ?></h2>
+                            
+                            <?php if(empty($sec['data'])): ?>
+                                <div class="kl-empty" style="padding: 30px 20px; min-height: auto;">
+                                    <p style="margin:0; font-size: 14px;">Tidak ada data kuliner aktif.</p>
                                 </div>
-                                <div class="card-header-actions">
-                                    <?php if ($k['status'] === 'pending'): ?>
-                                        <a href="<?= base_url('kuliner/approve/' . $k['id']) ?>" class="kl-btn kl-btn-sm" style="background: var(--kl-success); color: white; padding: 4px 10px; font-size: 11px;">Setujui</a>
-                                        <a href="#" class="kl-btn kl-btn-outline kl-btn-sm" style="border-color: var(--kl-danger); color: var(--kl-danger); padding: 4px 10px; font-size: 11px;" onclick="openRejectModal('<?= $k['id'] ?>', '<?= esc(addslashes($k['nama'])) ?>'); return false;">Tolak</a>
-                                    <?php elseif ($k['status'] === 'active'): ?>
-                                        <a href="<?= base_url('kuliner/edit/' . $k['id']) ?>" class="kl-btn kl-btn-outline kl-btn-sm" style="border-color: #2563EB; color: #2563EB; padding: 4px 10px; font-size: 11px;">Edit</a>
-                                        <a href="<?= base_url('kuliner/delete/' . $k['id']) ?>" class="kl-btn kl-btn-sm" style="color: var(--kl-danger); background: transparent; padding: 4px; font-size: 14px;" onclick="return confirm('Yakin hapus?');">🗑️</a>
-                                    <?php elseif ($k['status'] === 'rejected'): ?>
-                                        <a href="<?= base_url('kuliner/edit/' . $k['id']) ?>" class="kl-btn kl-btn-outline kl-btn-sm" style="color: var(--kl-muted); border-color: var(--kl-border); padding: 4px 10px; font-size: 11px;">Review Lagi</a>
-                                        <a href="<?= base_url('kuliner/delete/' . $k['id']) ?>" class="kl-btn kl-btn-sm" style="color: var(--kl-danger); background: transparent; padding: 4px; font-size: 14px;" onclick="return confirm('Yakin hapus?');">🗑️</a>
-                                    <?php endif; ?>
+                            <?php else: ?>
+                                <div class="kuliner-grid">
+                                    <?php foreach ($sec['data'] as $k): 
+                                        $userName = $k['user_name'] ?? 'User';
+                                        $userInitial = strtoupper(substr($userName, 0, 1));
+                                    ?>
+                                    <div class="card-kuliner status-<?= esc($k['status']) ?>" data-name="<?= strtolower(esc($k['nama'])) ?>">
+                                        <!-- Header Strip -->
+                                        <div class="card-header-strip">
+                                            <div class="card-header-user">
+                                                <div class="card-header-avatar"><?= $userInitial ?></div>
+                                                <div class="card-header-name" title="<?= esc($userName) ?>"><?= esc($userName) ?></div>
+                                            </div>
+                                            <div class="card-header-actions">
+                                                <?php if ($k['status'] === 'pending'): ?>
+                                                    <a href="<?= base_url('kuliner/approve/' . $k['id']) ?>" class="kl-btn kl-btn-sm" style="background: var(--kl-success); color: white; padding: 4px 10px; font-size: 11px;">Setujui</a>
+                                                    <a href="#" class="kl-btn kl-btn-outline kl-btn-sm" style="border-color: var(--kl-danger); color: var(--kl-danger); padding: 4px 10px; font-size: 11px;" onclick="openRejectModal('<?= $k['id'] ?>', '<?= esc(addslashes($k['nama'])) ?>'); return false;">Tolak</a>
+                                                <?php elseif ($k['status'] === 'active'): ?>
+                                                    <a href="<?= base_url('kuliner/edit/' . $k['id']) ?>" class="kl-btn kl-btn-outline kl-btn-sm" style="border-color: #2563EB; color: #2563EB; padding: 4px 10px; font-size: 11px;">Edit</a>
+                                                    <a href="<?= base_url('kuliner/delete/' . $k['id']) ?>" class="kl-btn kl-btn-sm" style="color: var(--kl-danger); background: transparent; padding: 4px; font-size: 14px;" onclick="return confirm('Yakin hapus?');">🗑️</a>
+                                                <?php elseif ($k['status'] === 'rejected'): ?>
+                                                    <a href="<?= base_url('kuliner/edit/' . $k['id']) ?>" class="kl-btn kl-btn-outline kl-btn-sm" style="color: var(--kl-muted); border-color: var(--kl-border); padding: 4px 10px; font-size: 11px;">Review Lagi</a>
+                                                    <a href="<?= base_url('kuliner/delete/' . $k['id']) ?>" class="kl-btn kl-btn-sm" style="color: var(--kl-danger); background: transparent; padding: 4px; font-size: 14px;" onclick="return confirm('Yakin hapus?');">🗑️</a>
+                                                <?php endif; ?>
+                                            </div>
+                                        </div>
+
+                                        <a href="<?= base_url('kuliner/detail/' . $k['id']) ?>" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex: 1;">
+                                            <!-- Photo Grid -->
+                                        <div class="card-photo-grid <?= empty($k['foto2']) ? 'card-photo-single' : '' ?>">
+                                            <?php if (!empty($k['gambar'])): ?>
+                                                <img src="<?= base_url('uploads/kuliner/' . $k['gambar']) ?>" alt="<?= esc($k['nama']) ?>" loading="lazy">
+                                                <?php if (!empty($k['foto2'])): ?>
+                                                    <img src="<?= base_url('uploads/kuliner/' . $k['foto2']) ?>" alt="<?= esc($k['nama']) ?> 2" loading="lazy">
+                                                <?php endif; ?>
+                                            <?php else: ?>
+                                                <div class="card-photo-placeholder">Foto belum tersedia</div>
+                                            <?php endif; ?>
+                                        </div>
+
+                                        <!-- Name Strip -->
+                                        <div class="card-name-strip">
+                                            <?= esc($k['nama']) ?>
+                                        </div>
+                                        </a>
+                                    </div>
+                                    <?php endforeach; ?>
                                 </div>
-                            </div>
-
-                            <a href="<?= base_url('kuliner/detail/' . $k['id']) ?>" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex: 1;">
-                                <!-- Photo Grid -->
-                            <div class="card-photo-grid <?= empty($k['foto2']) ? 'card-photo-single' : '' ?>">
-                                <?php if (!empty($k['gambar'])): ?>
-                                    <img src="<?= base_url('uploads/kuliner/' . $k['gambar']) ?>" alt="<?= esc($k['nama']) ?>" loading="lazy">
-                                    <?php if (!empty($k['foto2'])): ?>
-                                        <img src="<?= base_url('uploads/kuliner/' . $k['foto2']) ?>" alt="<?= esc($k['nama']) ?> 2" loading="lazy">
-                                    <?php endif; ?>
-                                <?php else: ?>
-                                    <div class="card-photo-placeholder">Foto belum tersedia</div>
-                                <?php endif; ?>
-                            </div>
-
-                            <!-- Name Strip -->
-                            <div class="card-name-strip">
-                                <?= esc($k['nama']) ?>
-                            </div>
-                            </a>
+                            <?php endif; ?>
                         </div>
-                        <?php endforeach; ?>
                     <?php endif; ?>
-                </div>
-
-                <?php if (empty($kuliner)): ?>
-                    <div class="kl-empty" id="empty-state">
-                        <div class="kl-empty-icon">📭</div>
-                        <h3>Belum ada data kuliner</h3>
-                        <p>Silakan tambah data baru untuk memulai.</p>
-                        <a href="<?= base_url('kuliner/create') ?>" class="kl-btn kl-btn-primary">➕ Tambah Data</a>
-                    </div>
-                <?php endif; ?>
+                <?php endforeach; ?>
             </div>
         </main>
     </div>
@@ -158,7 +166,6 @@
                     <p style="font-size: 14px; margin-bottom: 12px;">Anda akan menolak pengajuan: <br><strong id="reject-kuliner-name">Nama Kuliner</strong></p>
                     <div class="kl-form-group" style="margin-bottom: 0;">
                         <textarea name="alasan_penolakan" class="kl-textarea" placeholder="Alasan penolakan untuk kontributor..." required style="min-height: 80px;"></textarea>
-                        <p style="font-size: 12px; color: var(--kl-muted); margin-top: 6px;">Alasan ini akan dikirim ke kontributor (simulasi UI).</p>
                     </div>
                 </div>
                 <div class="kl-modal-footer">

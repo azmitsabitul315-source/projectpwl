@@ -20,7 +20,7 @@ class KulinerController extends BaseController
         $this->model = new KulinerModel();
     }
 
-    // GET /api/kuliner (daftar query: page, per_page, dan filter lat, lng, radius untuk pencarian radius)
+    // GET /api/kuliner (list semua kuliner: page, per_page, dan filter lat, lng, radius untuk pencarian radius)
     // Mendukung filter radius jika param lat,lng,radius diberikan
     public function index()
     {
@@ -57,7 +57,7 @@ class KulinerController extends BaseController
         ]);
     }
 
-    // GET /api/kuliner/{id} (detail satu kuliner)
+    // GET /api/kuliner/{id} (detail satu kuliner berdasarkan id)
     public function show($id = null)
     {
         $row = $this->model->find($id);
@@ -68,7 +68,7 @@ class KulinerController extends BaseController
         return $this->response->setJSON(['status' => true, 'data' => $row]);
     }
 
-    // POST /api/kuliner (tambah data JSON atau form)
+    // POST /api/kuliner (membuat data kuliner)
     public function create()
     {
         $input = $this->request->getJSON(true) ?? $this->request->getPost();
@@ -86,7 +86,7 @@ class KulinerController extends BaseController
         return $this->response->setStatusCode(201)->setJSON(['status' => true, 'id' => $id]);
     }
 
-    // PUT /api/kuliner/{id} (update data)
+    // PUT /api/kuliner/{id} (update data kuliner)
     public function update($id = null)
     {
         if (! $id) {
@@ -115,7 +115,7 @@ class KulinerController extends BaseController
         return $this->response->setJSON(['status' => true]);
     }
 
-    // DELETE /api/kuliner/{id} (hapus data)
+    // DELETE /api/kuliner/{id} (hapus data kuliner)
     public function delete($id = null)
     {
         if (! $id) {

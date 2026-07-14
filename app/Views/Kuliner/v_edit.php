@@ -13,7 +13,7 @@
         <aside class="kl-sidebar">
             <div class="kl-sidebar-header">
                 <a href="<?= base_url('dashboard') ?>" class="kl-logo" style="font-size: 1.35rem; text-decoration: none;">
-                    🍽️ <span>Kul</span>ine
+                     <span>Kul</span>inerr
                 </a>
                 <?php if (session()->get('role') === 'admin'): ?>
                     <span class="kl-admin-badge" style="margin-left: 8px;">Admin</span>
@@ -30,16 +30,16 @@
             </div>
             <nav class="kl-sidebar-nav">
                 <?php if (session()->get('role') === 'admin'): ?>
-                    <a href="<?= base_url('admin/dashboard') ?>">📊 Dashboard</a>
-                    <a href="<?= base_url('kuliner') ?>" class="active">🍽️ Kelola Kuliner</a>
-                    <a href="<?= base_url('kategori') ?>">🏷️ Kategori</a>
-                    <a href="<?= base_url('tag') ?>">🔖 Tag</a>
-                    <a href="<?= base_url('review') ?>">⭐ Kelola Ulasan</a>
+                    <a href="<?= base_url('admin/dashboard') ?>"> Dashboard</a>
+                    <a href="<?= base_url('kuliner') ?>" class="active"> Kelola Kuliner</a>
+                    <a href="<?= base_url('kategori') ?>"> Kategori</a>
+                    <a href="<?= base_url('tag') ?>"> Tag</a>
+                    <a href="<?= base_url('review') ?>"> Kelola Ulasan</a>
                 <?php else: ?>
-                    <a href="<?= base_url('dashboard') ?>">🏠 Dashboard</a>
-                    <a href="<?= base_url('kuliner') ?>" class="active">🍽️ Kuliner Saya</a>
-                    <a href="<?= base_url('kuliner/create') ?>">➕ Tambah Kuliner</a>
-                    <a href="<?= base_url('review') ?>">⭐ Ulasan Saya</a>
+                    <a href="<?= base_url('dashboard') ?>"> Dashboard</a>
+                    <a href="<?= base_url('kuliner') ?>" class="active"> Kuliner Saya</a>
+                    <a href="<?= base_url('kuliner/create') ?>">+ Tambah Kuliner</a>
+                    <a href="<?= base_url('review') ?>"> Ulasan Saya</a>
                 <?php endif; ?>
             </nav>
             <!-- Logout moved to topbar -->
@@ -227,7 +227,7 @@
                     <!-- Section: Tag -->
                     <div class="kl-card" style="margin-bottom: 24px;">
                         <div style="padding: 20px 24px; border-bottom: 1px solid var(--kl-border);">
-                            <h3 style="font-size: 16px; font-weight: 600;">🔖 Tag</h3>
+                            <h3 style="font-size: 16px; font-weight: 600;"> Tag</h3>
                         </div>
                         <div class="kl-card-body" style="padding: 24px;">
                             <?php if (!empty($tags)): ?>
