@@ -121,5 +121,5 @@ Proyek ini dilisensikan di bawah [MIT License](LICENSE). Silakan lihat file `LIC
 
 ## Kontak
 
-Dibuat oleh **[Nama Anda]** - [Email Anda]  
-Link Repositori: [https://github.com/username/projectpwl22](https://github.com/username/projectpwl22)
+Dibuat oleh **M.Tsabitul Azmi** - [Azmitsabitul315@gmail.com]  
+Link Repositori:( https://github.com/azmitsabitul315-source/projectpwl)
